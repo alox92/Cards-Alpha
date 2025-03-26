@@ -69,7 +69,7 @@ Cards/
 
 1. Cloner le dépôt
    ```bash
-   git clone (https://github.com/alox92/Cards-Alpha.git)
+   git clone https://github.com/alox92/Cards-Alpha.git
    ```
 
 2. Ouvrir le projet dans Xcode

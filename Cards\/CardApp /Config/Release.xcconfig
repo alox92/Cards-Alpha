@@ -1,0 +1,23 @@
+// Configuration Release
+
+#include "Base.xcconfig"
+
+// Optimisations complètes
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+SWIFT_COMPILATION_MODE = wholemodule
+GCC_OPTIMIZATION_LEVEL = s
+
+// Désactive le mode débogage
+SWIFT_ACTIVE_COMPILATION_CONDITIONS =
+GCC_PREPROCESSOR_DEFINITIONS =
+
+// Optimisation pour la taille et la vitesse
+COPY_PHASE_STRIP = YES
+DEAD_CODE_STRIPPING = YES
+LLVM_LTO = YES
+
+// Optimise pour macOS 15.4
+SWIFT_ENFORCE_EXCLUSIVE_ACCESS = runtime-checking
+
+// Gestion avancée de la mémoire
+SWIFT_DISABLE_SAFETY_CHECKS = YES

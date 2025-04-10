@@ -1,0 +1,248 @@
+[0;34m[1m[0;36m=== DÉMARRAGE DES CORRECTIONS DE PERFORMANCE COREDATA ===[0m[0m
+[0;36mDate: 10/04/2025 12:12:17[0m
+[0;36mRépertoire de sauvegarde: backups_coredata_perf_20250410_121217[0m
+[0;34m
+[1m🔧 Ajout de fetchBatchSize aux requêtes...[0m[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Tools/CoreDataOptimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Managers/CoreDataManager.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Models/Data/MediaEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/MediaEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/MediaEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/DeckEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/DeckEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/DeckEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/StudySessionEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/StudySessionEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/StudySessionEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/CardEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CardEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/CardEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/TagEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/TagEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/TagEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/CardReviewEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CardReviewEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/CardReviewEntity.swift[0m
+[0;36mAnalyse de ./Core/Models/Data/TagItemAssociationEntity.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/TagItemAssociationEntity.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Models/Data/TagItemAssociationEntity.swift[0m
+[0;36mAnalyse de ./Core/Protocols/DataManagementServiceProtocol.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/DataManagementServiceProtocol.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Protocols/DataManagementServiceProtocol.swift[0m
+[0;36mAnalyse de ./Core/Services/Study/StudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Example/ThreadSafeCoreDataService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedCardService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedStudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedDeckService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Services/Base/DataManagementService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./Core/Debug/CoreDataDiagnostics.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataDiagnostics.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./Core/Debug/CoreDataDiagnostics.swift[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataDiagnostic.swift[0m
+[0;32m✅ Ajout de fetchBatchSize à ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;36mAnalyse de ./CoreDataOptimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de NSFetchRequest[0m
+[0;34m
+[1m🔧 Ajout de @MainActor aux méthodes utilisant viewContext...[0m[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/DI/DependencyContainer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Managers/CoreDataManager.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Persistence/PersistenceController.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedCardService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedStudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedDeckService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/AppDelegate.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./Core/Services/Base/DataManagementService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataDiagnostic.swift[0m
+[0;32m✅ Ajout de @MainActor à ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataFixer.swift[0m
+[0;32m✅ Ajout de @MainActor à ./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift[0m
+[0;36mAnalyse de ./run_core_data_optimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne contient pas de viewContext[0m
+[0;36mAnalyse de ./CoreDataOptimizer.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataOptimizer.swift[0m
+[0;32m✅ Ajout de @MainActor à ./CoreDataOptimizer.swift[0m
+[0;34m
+[1m🔧 Optimisation des contextes d'arrière-plan...[0m[0m
+[0;36mAnalyse de ./.build/checkouts/swift-collections/Sources/OrderedCollections/OrderedSet/OrderedSet.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./.build/checkouts/swift-collections/Sources/OrderedCollections/OrderedSet/OrderedSet+Partial...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de RangeReplaceableCollection.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./.build/checkouts/swift-collections/Sources/OrderedCollections/HashTable/_HashTable+UnsafeHandle.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./.build/index-build/checkouts/swift-collections/Sources/OrderedCollections/OrderedSet/OrderedSet.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./.build/index-build/checkouts/swift-collections/Sources/OrderedCollections/OrderedSet/OrderedSet+Partial...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de RangeReplaceableCollection.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./.build/index-build/checkouts/swift-collections/Sources/OrderedCollections/HashTable/_HashTable+UnsafeHandle.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/UnifiedTagService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift[0m
+[0;36mAnalyse de ./Core/Tools/CoreDataOptimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Managers/CoreDataManager.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataManager.swift[0m
+[1;33m⚠️ Des modifications manuelles plus complexes sont nécessaires pour ./Core/Managers/CoreDataManager.swift[0m
+[0;36mAnalyse de ./Core/Persistence/CoreDataModel.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Persistence/PersistenceController.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Study/StudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Example/ThreadSafeCoreDataService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedTagService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/UnifiedTagService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./Core/Services/Unified/UnifiedTagService.swift[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedCardService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/UnifiedCardService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./Core/Services/Unified/UnifiedCardService.swift[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedStudyService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/UnifiedStudyService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./Core/Services/Unified/UnifiedStudyService.swift[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedDeckService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/UnifiedDeckService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./Core/Services/Unified/UnifiedDeckService.swift[0m
+[0;36mAnalyse de ./Core/Services/Tags/TagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Tags/TagItemAssociationService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/AppDelegate.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Base/DataManagementService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/DataManagementService.swift[0m
+[0;32m✅ Optimisation des contextes dans ./Core/Services/Base/DataManagementService.swift[0m
+[0;36mAnalyse de ./Core/Debug/CoreDataDiagnostics.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataDiagnostic.swift[0m
+[1;33m⚠️ Des modifications manuelles plus complexes sont nécessaires pour ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./run_core_data_optimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./CoreDataOptimizer.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataOptimizer.swift[0m
+[1;33m⚠️ Des modifications manuelles plus complexes sont nécessaires pour ./CoreDataOptimizer.swift[0m
+[0;34m
+[1m🔧 Ajout de la gestion d'erreurs pour les opérations CoreData...[0m[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Managers/CoreDataManager.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Persistence/PersistenceController.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Study/StudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Example/ThreadSafeCoreDataService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedCardService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedStudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedDeckService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Base/DataManagementService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./run_core_data_optimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./CoreDataOptimizer.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;34m
+[1m🔧 Ajout de [weak self] dans les closures CoreData...[0m[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/NSManagedObjectContext+Async.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/NSManagedObjectContext+Async.swift[0m
+[0;32m✅ Ajout de [weak self] à ./backups_memory_leaks_20250410_121215/NSManagedObjectContext+Async.swift[0m
+[0;36mAnalyse de ./backups_memory_leaks_20250410_121215/AppMain.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/AppMain.swift[0m
+[0;32m✅ Ajout de [weak self] à ./backups_memory_leaks_20250410_121215/AppMain.swift[0m
+[0;36mAnalyse de ./Core/Extensions/NSManagedObjectContext+Async.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/NSManagedObjectContext+Async.swift[0m
+[0;32m✅ Ajout de [weak self] à ./Core/Extensions/NSManagedObjectContext+Async.swift[0m
+[0;36mAnalyse de ./Core/Utilities/Extensions/ViewExtensions.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Persistence/CoreDataMigration.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Persistence/CoreDataConversionUtils.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Protocols/CloudSyncServiceProtocol.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Statistics/StatisticsServiceProtocol.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/StatisticsServiceProtocol.swift[0m
+[0;32m✅ Ajout de [weak self] à ./Core/Services/Statistics/StatisticsServiceProtocol.swift[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedTagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedCardService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedStudyService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Unified/UnifiedDeckService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Tags/TagService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Tags/TagItemAssociationService.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/TagItemAssociationService.swift[0m
+[0;32m✅ Ajout de [weak self] à ./Core/Services/Tags/TagItemAssociationService.swift[0m
+[0;36mAnalyse de ./Core/Services/Base/DataManagementService.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Stats/StatisticsViewModel.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./Core/Services/Stats/StatisticsView.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/StatisticsView.swift[0m
+[0;32m✅ Ajout de [weak self] à ./Core/Services/Stats/StatisticsView.swift[0m
+[0;36mAnalyse de ./App/AppStartup.swift...[0m
+[1;33m⏩ Fichier déjà optimisé ou ne nécessite pas d'optimisation[0m
+[0;36mAnalyse de ./App/AppMain.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/AppMain.swift[0m
+[0;32m✅ Ajout de [weak self] à ./App/AppMain.swift[0m
+[0;36mAnalyse de ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift...[0m
+[0;34mSauvegarde créée: backups_coredata_perf_20250410_121217/CoreDataDiagnostic.swift[0m
+[0;32m✅ Ajout de [weak self] à ./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift[0m
+[0;32m
+[1m[0;32m=== CORRECTIONS TERMINÉES ===[0m[0m
+[0;32m✅ Toutes les corrections ont été appliquées[0m
+[0;36m📝 Journal des modifications: logs/coredata_perf_fixes_20250410_121217.log[0m
+[0;36m💾 Les fichiers originaux ont été sauvegardés dans: backups_coredata_perf_20250410_121217[0m
+[1;33m[1;33mNote: Certaines modifications complexes peuvent nécessiter une vérification manuelle.[0m[0m
+[1;33m[1;33mNous vous recommandons de compiler et tester l'application après ces modifications.[0m[0m

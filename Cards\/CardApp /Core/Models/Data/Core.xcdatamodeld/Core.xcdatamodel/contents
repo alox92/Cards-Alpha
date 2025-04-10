@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CardEntity" representedClassName="CardEntity" syncable="YES">
+        <attribute name="additionalInfo" optional="YES" attributeType="String"/>
+        <attribute name="answer" attributeType="String"/>
+        <attribute name="correctCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deckID" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ease" attributeType="Double" defaultValueString="2.5" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="incorrectCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="interval" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isFlagged" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastReviewedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="masteryLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nextReviewDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="question" attributeType="String"/>
+        <attribute name="reviewCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tags" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="cards" inverseEntity="DeckEntity"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardReviewEntity" inverseName="card" inverseEntity="CardReviewEntity"/>
+    </entity>
+    <entity name="CardReviewEntity" representedClassName="CardReviewEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="newEase" attributeType="Double" defaultValueString="2.5" usesScalarValueType="YES"/>
+        <attribute name="newInterval" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="newMasteryLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rating" attributeType="String"/>
+        <attribute name="responseTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardEntity" inverseName="reviews" inverseEntity="CardEntity"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudySessionEntity" inverseName="reviews" inverseEntity="StudySessionEntity"/>
+    </entity>
+    <entity name="DeckEntity" representedClassName="DeckEntity" syncable="YES">
+        <attribute name="cardCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="colorName" attributeType="String" defaultValueString="blue"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="desc" attributeType="String" defaultValueString=""/>
+        <attribute name="icon" attributeType="String" defaultValueString="rectangle.stack"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="tags" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardEntity" inverseName="deck" inverseEntity="CardEntity"/>
+        <relationship name="parentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="subdecks" inverseEntity="DeckEntity"/>
+        <relationship name="subdecks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeckEntity" inverseName="parentDeck" inverseEntity="DeckEntity"/>
+    </entity>
+    <entity name="StudySessionEntity" representedClassName="StudySessionEntity" syncable="YES">
+        <attribute name="deckID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="includeSubdecks" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="reviewLimit" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reviewsData" optional="YES" attributeType="Binary"/>
+        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalCorrect" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalIncorrect" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalReviews" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="sessions" inverseEntity="DeckEntity"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardReviewEntity" inverseName="session" inverseEntity="CardReviewEntity"/>
+    </entity>
+    <entity name="TagEntity" representedClassName="TagEntity" syncable="YES">
+        <attribute name="color" attributeType="String" defaultValueString="blue"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="tagDescription" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="usage" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model> 

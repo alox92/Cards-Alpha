@@ -1,0 +1,76 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Debug CardApp 22-38-19-211",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/debug/CardApp 22-38-19-211",
+            "preLaunchTask": "swift: Build Debug CardApp 22-38-19-211"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Release CardApp 22-38-19-211",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/release/CardApp 22-38-19-211",
+            "preLaunchTask": "swift: Build Release CardApp 22-38-19-211"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Debug CardApp",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/debug/CardApp",
+            "preLaunchTask": "swift: Build Debug CardApp"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Release CardApp",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/release/CardApp",
+            "preLaunchTask": "swift: Build Release CardApp"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Debug App",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/debug/App",
+            "preLaunchTask": "swift: Build Debug App"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Release App",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/release/App",
+            "preLaunchTask": "swift: Build Release App"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Debug CardAppDebug",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/debug/CardAppDebug",
+            "preLaunchTask": "swift: Build Debug CardAppDebug"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CardApp 22-38-19-211}",
+            "name": "Release CardAppDebug",
+            "program": "${workspaceFolder:CardApp 22-38-19-211}/.build/release/CardAppDebug",
+            "preLaunchTask": "swift: Build Release CardAppDebug"
+        }
+    ]
+}

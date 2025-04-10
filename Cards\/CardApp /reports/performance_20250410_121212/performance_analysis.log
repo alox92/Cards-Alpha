@@ -1,0 +1,35 @@
+[0;34m[1m[0;36m=== DÉMARRAGE DE L'ANALYSE DE PERFORMANCE GLOBALE ===[0m[0m
+[0;36mDate: 10/04/2025 12:12:12[0m
+[0;36mProjet: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211[0m
+[0;36mRapports: reports/performance_20250410_121212[0m
+[0;34m
+[1m🔍 Analyse des fuites mémoire...[0m[0m
+[0;36mRecherche des cycles de référence potentiels...[0m
+[0;32m✅ Aucune fuite mémoire potentielle détectée[0m
+[0;34m
+[1m🔍 Analyse de performance CoreData...[0m[0m
+[0;36mRecherche des requêtes non optimisées...[0m
+[1;33m⚠️ Détecté      118 requêtes sans fetchBatchSize[0m
+[1;33m⚠️ Détecté       47 opérations viewContext sans @MainActor[0m
+[0;34m
+[1m🔍 Exécution de l'analyseur statique Python...[0m[0m
+[0;36mAnalyse des problèmes de mémoire et concurrence...[0m
+[0;31m❌ Échec de l'analyse Python[0m
+[0;34m
+[1m🔍 Exécution de l'analyseur de performance Rust...[0m[0m
+[0;36mAnalyse multi-thread des problèmes de performance...[0m
+[0;31m❌ cargo n'est pas installé[0m
+[1;33m⚠️ L'analyse Rust a été ignorée car Cargo n'est pas installé[0m
+[0;34m
+[1m🔍 Exécution du diagnostic CoreData Swift...[0m[0m
+[1;33m⚠️ Le fichier de diagnostic CoreData n'existe pas[0m
+[0;34m
+[1m📝 Génération du rapport de synthèse...[0m[0m
+[0;32m✅ Rapport de synthèse généré: reports/performance_20250410_121212/summary.md[0m
+[0;34m📝 Rapports complets disponibles dans: reports/performance_20250410_121212[0m
+[0;34m
+[1m📊 Génération du rapport HTML...[0m[0m
+[0;36mCréation du rapport visuel...[0m
+[0;31m❌ Échec de la génération du rapport HTML[0m
+[0;32m[1m[0;32m=== ANALYSE DE PERFORMANCE TERMINÉE ===[0m[0m
+[0;36m📊 Consultez les rapports dans: reports/performance_20250410_121212[0m

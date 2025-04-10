@@ -1,0 +1,54 @@
+=== Correction rapide des problèmes de compilation ===
+Date: Wed Apr  9 22:55:05 CEST 2025
+
+[1;33m1. Correction des modèles CoreData dupliqués...[0m
+[0;34mSauvegarde de Core/Persistence/Cards.xcdatamodeld/Cards.xcdatamodel/contents effectuée[0m
+[0;32mModèle unifié créé à partir de Cards[0m
+[1;33m2. Mise à jour du PersistenceController...[0m
+[0;34mSauvegarde de Core/Persistence/PersistenceController.swift effectuée[0m
+[0;32mPersistenceController mis à jour[0m
+[1;33m3. Correction des ambiguïtés de types...[0m
+[0;34mSauvegarde de Core/Models/Study/CardReview.swift effectuée[0m
+[0;34mTraitement de Core/Models/Study/CardReview.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[0;32m- Paramètres avec MasteryLevel corrigés[0m
+[0;34mSauvegarde de Core/Models/Data/CardReviewEntity.swift effectuée[0m
+[0;34mTraitement de Core/Models/Data/CardReviewEntity.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[0;32m- Paramètres avec MasteryLevel corrigés[0m
+[0;34mSauvegarde de Core/Services/Unified/UnifiedStudyService.swift effectuée[0m
+[0;34mTraitement de Core/Services/Unified/UnifiedStudyService.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[0;32m- Paramètres avec MasteryLevel corrigés[0m
+[0;34mSauvegarde de Core/Services/Unified/CardScheduler.swift effectuée[0m
+[0;34mTraitement de Core/Services/Unified/CardScheduler.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[0;32m- calculateNewMasteryLevel corrigé[0m
+[0;34mSauvegarde de Core/Services/Study/StudyService.swift effectuée[0m
+[0;34mTraitement de Core/Services/Study/StudyService.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[0;32m- Paramètres avec MasteryLevel corrigés[0m
+[0;34mSauvegarde de Core/Common/Types.swift effectuée[0m
+[0;34mTraitement de Core/Common/Types.swift...[0m
+[0;32m- ReviewRating corrigé[0m
+[0;32m- MasteryLevel corrigé[0m
+[1;33m4. Correction des problèmes de concurrence...[0m
+[0;34mSauvegarde de Core/Services/Unified/UnifiedStudyService.swift effectuée[0m
+[0;32mUnifiedStudyService corrigé[0m
+[1;33m5. Correction des problèmes d'initialisation CardReview...[0m
+[0;34mSauvegarde de Core/Models/Study/CardReview.swift effectuée[0m
+[0;32m- CardReview: Codable remplacé par Hashable[0m
+[0;32mCardReview corrigé[0m
+[0;34mSauvegarde de Core/Models/Data/CardReviewEntity.swift effectuée[0m
+[0;32m- CardReviewEntity: initialisations corrigées[0m
+[0;32mCardReviewEntity corrigé[0m
+[1;33m6. Vérification finale et corrections supplémentaires...[0m
+[0;32m=== Corrections terminées ===[0m
+[1;33mVérifiez la compilation du projet pour vous assurer que tous les problèmes ont été résolus.[0m
+[1;33mSi vous rencontrez toujours des problèmes, consultez les logs pour plus de détails: logs/quick_fix_20250409_225505.log[0m
+[0;34mLes fichiers originaux ont été sauvegardés dans: backups_quick_fix_20250409_225505[0m

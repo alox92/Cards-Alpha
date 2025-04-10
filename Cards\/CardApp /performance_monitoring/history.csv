@@ -1,0 +1,15 @@
+Date,FetchTime,SaveTime,MemoryUsage
+2025-04-10 12:14:28,[0;34mMesure du temps de fetch pour 100 éléments...[0m
+[0;32mTemps de fetch: 1.436888000s[0m
+1.436888000,[0;34mMesure du temps de sauvegarde pour 50 éléments...[0m
+[0;32mTemps de sauvegarde: 1.218953000s[0m
+1.218953000,[0;34mMesure de l'utilisation mémoire...[0m
+[0;32mUtilisation mémoire: 78 MB[0m
+78
+2025-04-10 12:15:39,[0;34mMesure du temps de fetch pour 100 éléments...[0m
+[0;32mTemps de fetch: 1.441194000s[0m
+1.441194000,[0;34mMesure du temps de sauvegarde pour 50 éléments...[0m
+[0;32mTemps de sauvegarde: 1.305264000s[0m
+1.305264000,[0;34mMesure de l'utilisation mémoire...[0m
+[0;32mUtilisation mémoire: 78 MB[0m
+78

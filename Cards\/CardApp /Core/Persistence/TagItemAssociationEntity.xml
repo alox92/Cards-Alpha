@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity name="TagItemAssociationEntity" representedClassName=".TagItemAssociationEntity" syncable="YES">
+    <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+    <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+    <attribute name="itemID" attributeType="UUID" usesScalarValueType="NO"/>
+    <attribute name="itemType" attributeType="String"/>
+    <attribute name="tagID" attributeType="UUID" usesScalarValueType="NO"/>
+    <fetchIndex name="byIdIndex">
+        <fetchIndexElement property="id" type="Binary" order="ascending"/>
+    </fetchIndex>
+    <fetchIndex name="byTagIDIndex">
+        <fetchIndexElement property="tagID" type="Binary" order="ascending"/>
+    </fetchIndex>
+    <fetchIndex name="byItemIDIndex">
+        <fetchIndexElement property="itemID" type="Binary" order="ascending"/>
+    </fetchIndex>
+    <fetchIndex name="byItemTypeIndex">
+        <fetchIndexElement property="itemType" type="Binary" order="ascending"/>
+    </fetchIndex>
+</entity> 

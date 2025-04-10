@@ -1,0 +1,33 @@
+RAPPORT DE VÉRIFICATION DES IMPORTS DE CARDAPP
+Date: Wed Apr  9 21:54:27 CEST 2025
+----------------------------------------------
+1. IMPORTS PROBLÉMATIQUES
+Fichiers avec 'import Core.Common':        5
+Fichiers concernés:
+- ./Core/Services/Study/StudyService.swift
+- ./Core/Services/Unified/UnifiedStudyService.swift
+- ./Core/Services/Unified/CardScheduler.swift
+- ./backups_fixes_20250409_214926/StudyService.swift
+- ./backups_fixes_20250409_214926/CardReviewEntity.swift
+
+Fichiers avec 'import Core.Models.Common':        1
+Fichiers concernés:
+- ./Core/Services/Unified/UnifiedStudyService.swift
+
+Fichiers avec imports malformés:        1
+Fichiers concernés:
+- ./Core/Services/Unified/UnifiedStudyService.swift
+2. RÉFÉRENCES AUX TYPES AMBIGUS
+Références non qualifiées à ReviewRating:        0
+Références non qualifiées à MasteryLevel:       28
+Références non qualifiées à StudyServiceError:       49
+3. AMBIGUÏTÉS DE PERSISTENCECONTROLLER
+Nombre d'ambiguïtés détectées:        0
+4. DÉCLARATIONS MULTIPLES DE TYPES
+Déclarations de ReviewRating:        5
+Déclarations de MasteryLevel:        6
+5. ERREURS DE COMPILATION LIÉES AUX MODULES
+Erreurs 'No such module':        0
+RÉSUMÉ GLOBAL
+Nombre total de problèmes détectés: 93
+Rapport enregistré dans: verification_imports_20250409_215427.txt

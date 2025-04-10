@@ -1,0 +1,13 @@
+[0;34m[1m=== Monitoring de Performance pour CardApp ===[0m[0m
+[0;34mMesure du temps de fetch pour 100 éléments...[0m
+[0;32mTemps de fetch: 1.436888000s[0m
+[0;34mMesure du temps de sauvegarde pour 50 éléments...[0m
+[0;32mTemps de sauvegarde: 1.218953000s[0m
+[0;34mMesure de l'utilisation mémoire...[0m
+[0;32mUtilisation mémoire: 78 MB[0m
+[0;34mGénération du rapport...[0m
+[0;32mRapport généré: performance_monitoring/monitoring_20250410_121425.md[0m
+[0;32mHistorique mis à jour[0m
+[1;33mgnuplot n'est pas installé. Les graphiques n'ont pas été générés.[0m
+[0;34m[1m=== Monitoring de Performance Terminé ===[0m[0m
+[0;32mRapport disponible dans: performance_monitoring/monitoring_20250410_121425.md[0m

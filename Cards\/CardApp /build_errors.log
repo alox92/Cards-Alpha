@@ -1,0 +1,6 @@
+Core/Common/Types.swift:1:8: error: no such module 'Core'
+  1 | import Core
+    |        `- error: no such module 'Core'
+  2 | import Foundation
+  3 | 
+2025-04-10 14:59:03 - ERREUR: Échec de la compilation. Voir build_errors.log pour plus de détails.

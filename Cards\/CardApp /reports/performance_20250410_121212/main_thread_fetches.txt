@@ -1,0 +1,47 @@
+./Core/DI/DependencyContainer.swift:213:        _ = persistenceController.container.viewContext
+./Core/Managers/CoreDataManager.swift:31:    var viewContext: NSManagedObjectContext {
+./Core/Managers/CoreDataManager.swift:32:        return persistentContainer.viewContext
+./Core/Managers/CoreDataManager.swift:36:        let context = persistentContainer.viewContext
+./Core/Managers/CoreDataManager.swift:55:        let context = viewContext
+./Core/Managers/CoreDataManager.swift:73:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest).first
+./Core/Managers/CoreDataManager.swift:78:        return try viewContext.fetch(fetchRequest)
+./Core/Managers/CoreDataManager.swift:83:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:87:        viewContext.delete(deck)
+./Core/Managers/CoreDataManager.swift:88:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:95:        let context = viewContext
+./Core/Managers/CoreDataManager.swift:119:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest).first
+./Core/Managers/CoreDataManager.swift:125:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest)
+./Core/Managers/CoreDataManager.swift:130:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:134:        viewContext.delete(card)
+./Core/Managers/CoreDataManager.swift:135:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:142:        let context = viewContext
+./Core/Managers/CoreDataManager.swift:157:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest).first
+./Core/Managers/CoreDataManager.swift:161:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:165:        viewContext.delete(session)
+./Core/Managers/CoreDataManager.swift:166:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:173:        let context = viewContext
+./Core/Managers/CoreDataManager.swift:191:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest).first
+./Core/Managers/CoreDataManager.swift:197:        fetchRequest.fetchBatchSize = 20; return try viewContext.fetch(fetchRequest)
+./Core/Managers/CoreDataManager.swift:201:        try viewContext.save()
+./Core/Managers/CoreDataManager.swift:205:        viewContext.delete(review)
+./Core/Managers/CoreDataManager.swift:206:        try viewContext.save()
+./Core/Persistence/PersistenceController.swift:47:        container.viewContext.automaticallyMergesChangesFromParent = true
+./Core/Persistence/PersistenceController.swift:49:        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+./Core/Persistence/PersistenceController.swift:54:        let context = container.viewContext
+./Core/Services/Unified/UnifiedTagService.swift:74:    private var viewContext: NSManagedObjectContext {
+./Core/Services/Unified/UnifiedTagService.swift:75:        persistenceController.container.viewContext
+./Core/Services/Unified/UnifiedCardService.swift:39:    private func viewContext() -> NSManagedObjectContext {
+./Core/Services/Unified/UnifiedCardService.swift:40:        return persistenceController.container.viewContext
+./Core/Services/Unified/UnifiedStudyService.swift:54:    private func viewContext() -> NSManagedObjectContext {
+./Core/Services/Unified/UnifiedStudyService.swift:55:        return persistence.container.viewContext
+./Core/Services/Unified/UnifiedDeckService.swift:25:    private var viewContext: NSManagedObjectContext {
+./Core/Services/Unified/UnifiedDeckService.swift:26:        persistenceController.container.viewContext
+./Core/Services/AppDelegate.swift:134:            try container.persistenceController.container.viewContext.save()
+./Core/Services/Base/DataManagementService.swift:180:                let mainContext = self.persistenceController.container.viewContext
+./Core/Services/Base/DataManagementService.swift:207:                    let mainContext = self.persistenceController.container.viewContext
+./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift:405:        if content.contains("viewContext") && 
+./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift:413:                message: "Utilisation potentielle du viewContext dans un thread d'arrière-plan dans \(file)",
+./analysis_tools/swift_coredata_diagnostic/CoreDataDiagnostic.swift:414:                recommendation: "Utilisez newBackgroundContext() pour les opérations en arrière-plan, et viewContext uniquement sur le thread principal"
+./analysis_tools/swift_coredata_diagnostic/CoreDataFixer.swift:154:                let context = container.viewContext
+./CoreDataOptimizer.swift:192:        let context = persistentContainer.viewContext
+./CoreDataOptimizer.swift:392:            "viewContext utilisé en dehors du thread principal",

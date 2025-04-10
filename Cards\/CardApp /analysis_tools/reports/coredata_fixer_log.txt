@@ -1,0 +1,1 @@
+Usage: CoreDataFixer.swift <chemin_du_projet> [--analyze-only]

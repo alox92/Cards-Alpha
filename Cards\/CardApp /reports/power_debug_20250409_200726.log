@@ -1,0 +1,19 @@
+[INFO] 20:07:26 - Démarrage du processus d'analyse et d'optimisation
+[INFO] 20:07:26 - Projet: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211
+[INFO] 20:07:26 - Date: Wed Apr  9 20:07:26 CEST 2025
+[INFO] 20:07:26 - Analyse spécifique d'UnifiedStudyService uniquement
+[STEP] 20:07:26 - Vérification de l'environnement de développement
+[INFO] 20:07:26 - Python 3 trouvé: Python 3.11.9
+[INFO] 20:07:26 - Swift trouvé: Apple Swift version 6.1 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+[WARNING] 20:07:26 - Rust non trouvé. L'analyse multi-thread sera moins performante.
+[INFO] 20:07:26 - Node.js trouvé: v22.13.1
+[SUCCESS] 20:07:26 - Environnement de développement prêt
+[STEP] 20:07:26 - Analyse spécifique d'UnifiedStudyService
+[INFO] 20:07:27 - Fichier trouvé: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/Core/Services/Unified/UnifiedStudyService.swift
+[SUCCESS] 20:07:27 - Analyse d'UnifiedStudyService terminée
+[INFO] 20:07:27 - Rapport enregistré dans: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/reports/unified_study_service_analysis_20250409_200726.txt
+[INFO] 20:07:27 - Propriétés partagées:        2
+[INFO] 20:07:27 - Utilisations de viewContext:        2 (avec @MainActor: 7)
+[INFO] 20:07:27 - Closures problématiques: 12
+[INFO] 20:07:27 - Opérations CoreData risquées:       68
+[WARNING] 20:07:27 - Des problèmes critiques de concurrence ont été détectés dans UnifiedStudyService

@@ -1,0 +1,181 @@
+========================================================
+  ANALYSE DÉTAILLÉE DE UNIFIEDSTUDYSERVICE
+========================================================
+
+Fichier: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/Core/Services/Unified/UnifiedStudyService.swift
+Date: Wed Apr  9 20:07:27 CEST 2025
+
+UnifiedStudyService est un composant critique qui rencontre
+des problèmes de concurrence. Cette analyse spécifique vise
+à identifier et corriger ces problèmes.
+
+--------------------------------------------------------
+1. ANALYSE DES PROBLÈMES DE CONCURRENCE
+--------------------------------------------------------
+
+1.1 Propriétés partagées sans protection de concurrence:
+
+58:    private var currentSessionSubject = CurrentValueSubject<StudySession?, Never>(nil)
+59:    public var currentSessionPublisher: AnyPublisher<StudySession?, Never> {
+
+Total:        2 propriétés potentiellement partagées
+
+1.2 Utilisation de viewContext sans @MainActor:
+
+94:    private func viewContext() -> NSManagedObjectContext {
+95:        return persistence.container.viewContext
+
+Total:        2 utilisations de viewContext
+Utilisation de @MainActor: 7
+
+1.3 Closures sans [weak self]:
+
+66-        self.persistence = persistence
+67-        self.cardService = cardService
+82-        self.persistence = persistenceController
+83-        self.cardService = cardService
+154-self.currentSessionSubject.send(session)
+158-                self.currentSessionSubject.send(session)
+273-                self.currentSessionSubject.send(updatedSession)
+367-            self.currentSessionSubject.send(nil) // La session active est terminée
+1047-        self.id = id
+1048-        self.cardID = cardID
+1062-        self.init(
+1084-        self.init(from: entity)
+
+Total: environ 12 closures potentiellement problématiques
+
+1.4 Opérations CoreData sans contexte d'arrière-plan approprié:
+
+102:    private func fetchCurrentSession() async throws -> StudySession? {
+105:        let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+106:        fetchRequest.predicate = NSPredicate(format: "endTime == nil")
+107:        fetchRequest.fetchBatchSize = 20        fetchRequest.fetchLimit = 1
+110:            guard let entity = try context.fetch(fetchRequest).first else {
+125:            let activeSessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+127:        fetchRequest.fetchBatchSize = 20if try context.fetch(activeSessionFetchRequest).first != nil {
+130:            if try context.fetch(activeSessionFetchRequest).first != nil {
+169:            let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+170:            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+171:        fetchRequest.fetchBatchSize = 20            fetchRequest.fetchLimit = 1
+173:            guard let entity = try context.fetch(fetchRequest).first else {
+202:            let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+203:            fetchRequest.predicate = NSPredicate(format: "id == %@", session.id as CVarArg)
+204:        fetchRequest.fetchBatchSize = 20            fetchRequest.fetchLimit = 1
+206:            guard let entity = try context.fetch(fetchRequest).first else {
+302:            let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+303:            fetchRequest.predicate = NSPredicate(format: "id == %@", session.id as CVarArg)
+304:        fetchRequest.fetchBatchSize = 20            fetchRequest.fetchLimit = 1
+306:            guard let sessionEntity = try context.fetch(fetchRequest).first else {
+377:        let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+379:        fetchRequest.fetchBatchSize = 20        sessionFetchRequest.fetchLimit = 1
+382:            guard let session = try context.fetch(sessionFetchRequest).first else {
+388:            let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+390:        fetchRequest.fetchBatchSize = 20            
+391:            let cards = try context.fetch(cardsFetchRequest)
+400:        let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+402:        fetchRequest.fetchBatchSize = 20        sessionFetchRequest.fetchLimit = 1
+405:            guard let session = try context.fetch(sessionFetchRequest).first else {
+411:            let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+413:        fetchRequest.fetchBatchSize = 20            
+414:            let cards = try context.fetch(cardsFetchRequest)
+425:            let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+427:        fetchRequest.fetchBatchSize = 20            cardFetchRequest.fetchLimit = 1
+429:            guard let card = try context.fetch(cardFetchRequest).first else {
+434:            let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+436:        fetchRequest.fetchBatchSize = 20            sessionFetchRequest.fetchLimit = 1
+438:            guard let session = try context.fetch(sessionFetchRequest).first else {
+521:        let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+522:        fetchRequest.predicate = NSPredicate(format: "card.id == %@", cardID as CVarArg)
+523:        fetchRequest.fetchBatchSize = 20        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+528:                    let reviewEntities = try fetchRequest.execute()
+568:        let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+569:        fetchRequest.predicate = NSPredicate(format: "card.id == %@", cardID as CVarArg)
+570:        fetchRequest.fetchBatchSize = 20        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
+575:                    let reviewEntities = try fetchRequest.execute()
+630:        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+631:        fetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+632:        fetchRequest.fetchBatchSize = 20        
+636:                    let cardEntities = try fetchRequest.execute()
+728:        let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+730:        fetchRequest.fetchBatchSize = 20        sessionFetchRequest.fetchLimit = 1
+777:            let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+779:        fetchRequest.fetchBatchSize = 20            
+871:        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+873:        fetchRequest.fetchBatchSize = 20        // Gérer les sous-paquets si nécessaire
+877:            fetchRequest.predicate = NSPredicate(format: "deckID == %@ AND (nextReviewDate <= %@ OR nextReviewDate == nil)", 
+881:            fetchRequest.predicate = NSPredicate(format: "deckID == %@ AND (nextReviewDate <= %@ OR nextReviewDate == nil)", 
+888:            fetchRequest.fetchLimit = limit
+892:        fetchRequest.sortDescriptors = [
+899:            let cardEntities = try context.fetch(fetchRequest)
+909:        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+910:        fetchRequest.predicate = NSPredicate(format: "deckID == %@ AND (nextReviewDate <= %@ OR nextReviewDate == nil)", 
+911:        fetchRequest.fetchBatchSize = 20                                            deckID as CVarArg, 
+913:        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CardEntity.nextReviewDate, ascending: true)]
+916:            fetchRequest.fetchLimit = limit
+920:            let entities = try context.fetch(fetchRequest)
+1023:                if let session = try await fetchCurrentSession() {
+
+Total:       68 opérations potentiellement sur le thread principal
+
+--------------------------------------------------------
+2. RECOMMANDATIONS DE CORRECTIONS
+--------------------------------------------------------
+
+2.1 Refactorisation générale recommandée:
+
+  - Utiliser @MainActor pour toutes les méthodes accédant à viewContext
+  - Ajouter [weak self] à toutes les closures utilisant self
+  - Utiliser des acteurs pour isoler l'état partagé
+  - Séparer les opérations de lecture/écriture CoreData
+
+2.2 Problèmes critiques à corriger immédiatement:
+
+  ⚠️ CRITIQUE: Nombreuses closures sans [weak self] détectées
+      → Risques de fuites mémoire et de cycles de référence
+
+  ⚠️ CRITIQUE: Opérations CoreData potentiellement sur le thread principal
+      → Utiliser performBackgroundTask ou newBackgroundContext
+
+--------------------------------------------------------
+3. EXEMPLE DE CODE CORRIGÉ
+--------------------------------------------------------
+
+// Pour les opérations viewContext
+@MainActor
+func fetchCurrentSession() async throws -> StudySession? {
+    let request = NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+    request.predicate = NSPredicate(format: "isActive == %@", NSNumber(value: true))
+    request.fetchLimit = 1
+    
+    let results = try persistenceController.viewContext.fetch(request)
+    return results.first.flatMap(StudySession.init)
+}
+
+// Pour les opérations en arrière-plan
+func updateSessionInBackground(id: UUID, duration: TimeInterval) async throws {
+    return try await withCheckedThrowingContinuation { continuation in
+        persistenceController.container.performBackgroundTask { context in
+            do {
+                let request = NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+                request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                request.fetchLimit = 1
+                
+                let results = try context.fetch(request)
+                if let session = results.first {
+                    session.duration = duration
+                    try context.save()
+                    continuation.resume(returning: ())
+                } else {
+                    continuation.resume(throwing: StudyError.sessionNotFound)
+                }
+            } catch {
+                continuation.resume(throwing: error)
+            }
+        }
+    }
+}
+
+========================================================
+  FIN DE L'ANALYSE
+========================================================

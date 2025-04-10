@@ -1,0 +1,333 @@
+[95m[1mANALYSEUR SWIFT[0m
+[95m[1m===============[0m
+
+Analyse du projet: .
+
+[94mChargement des fichiers Swift...[0m
+[92mTrouvé 91 fichiers Swift à analyser.[0m
+[94mAnalyse des fichiers Swift...[0m
+[94mRecherche des dépendances circulaires...[0m
+[92mAnalyse terminée. 321 problèmes trouvés.[0m
+
+[95m[1mRAPPORT D'ANALYSE SWIFT[0m
+[1m========================[0m
+
+[1mRésumé des problèmes:[0m
+  Critiques: [91m0[0m
+  Erreurs:   [91m11[0m
+  Avertissements: [93m183[0m
+  Infos:     [94m127[0m
+  TOTAL:     [1m321[0m
+
+[1m[4mProblèmes de concurrence (11):[0m
+
+[91m[ERROR][0m StudyService.swift:216
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:119
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:151
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:253
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:269
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:466
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:507
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:571
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:622
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+[91m[ERROR][0m UnifiedDeckService.swift:657
+  Utilisation de 'self' sans [weak self] dans un bloc asynchrone
+  [92mSuggestion: Utilisez [weak self] pour éviter un cycle de référence[0m
+  Exemple de correction:
+  [96mTask { [weak self] in
+    guard let self = self else { return }
+    // votre code asynchrone
+}[0m
+
+... et 1 autres problèmes de cette catégorie.
+
+
+[1m[4mProblèmes CoreData (288):[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:205
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:192
+  Accès à viewContext sans annotation @MainActor
+  [92mSuggestion: Ajoutez @MainActor à la classe ou méthode qui utilise viewContext[0m
+  Exemple de correction:
+  [96m@MainActor
+func maFonction() {
+    // accès à viewContext
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:86
+  Opération CoreData 'save' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.save(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:160
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:178
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:193
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:216
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:243
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:255
+  Opération CoreData 'fetch' sans gestion d'erreur complète
+  [92mSuggestion: Enveloppez l'opération dans un bloc do-catch pour gérer les erreurs[0m
+  Exemple de correction:
+  [96mdo {
+    try context.fetch(...)
+} catch {
+    print("Erreur: \(error)")
+}[0m
+
+[93m[WARNING][0m CoreDataOptimizer.swift:159
+  NSPredicate potentiellement vulnérable aux injections
+  [92mSuggestion: Utilisez les placeholders %@ pour les valeurs dynamiques[0m
+  Exemple de correction:
+  [96mNSPredicate(format: "attribute = %@", value)[0m
+
+... et 278 autres problèmes de cette catégorie.
+
+
+[1m[4mProblèmes de sécurité (22):[0m
+
+[94m[INFO][0m run_core_data_optimizer.swift:120
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m run_core_data_optimizer.swift:142
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m run_core_data_optimizer.swift:150
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m CoreDataOptimizer.swift:160
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m CoreDataOptimizer.swift:178
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m CoreDataOptimizer.swift:193
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m CoreDataOptimizer.swift:243
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m CoreDataOptimizer.swift:255
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m DependencyContainer.swift:83
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+[94m[INFO][0m DependencyContainer.swift:96
+  Utilisation de force unwrap (!), peut causer des crashes
+  [92mSuggestion: Utilisez 'if let', 'guard let' ou '??' pour un déballage sécurisé[0m
+  Exemple de correction:
+  [96mif let value = optionalValue {
+    // Utiliser value
+} else {
+    // Gérer le cas nil
+}[0m
+
+... et 12 autres problèmes de cette catégorie.
+
+
+[1m[4mRecommandations générales:[0m
+
+1. Revoyez l'utilisation des capture lists ([weak self]) dans les closures
+2. Ajoutez une gestion d'erreur complète pour les opérations CoreData
+3. Assurez-vous que toutes les opérations viewContext sont annotées avec @MainActor
+4. Évitez les dépendances circulaires entre les modules
+5. Utilisez fetchBatchSize pour optimiser les performances des requêtes CoreData
+
+[1mScore de santé du code: [93m76/100[0m
+
+[1mFin du rapport.[0m
+

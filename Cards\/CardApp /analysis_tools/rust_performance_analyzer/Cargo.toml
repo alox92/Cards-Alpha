@@ -1,0 +1,26 @@
+[package]
+name = "swift_performance_analyzer"
+version = "0.1.0"
+edition = "2021"
+authors = ["CardApp Development Team"]
+description = "Analyseur de performance multi-thread pour code Swift"
+
+[dependencies]
+rayon = "1.8.0"         # Pour le traitement parallèle
+walkdir = "2.4.0"       # Pour parcourir l'arborescence des fichiers
+regex = "1.9.5"         # Pour l'analyse par expressions régulières
+serde = { version = "1.0.188", features = ["derive"] }  # Sérialisation/désérialisation
+serde_json = "1.0.107"  # Support JSON
+clap = { version = "4.4.6", features = ["derive"] }     # Analyse des arguments en ligne de commande
+syntect = "5.1.0"       # Support de la coloration syntaxique
+indicatif = "0.17.7"    # Barres de progression
+colored = "2.0.4"       # Texte coloré pour le terminal
+hashbrown = "0.14.0"    # Implémentation hashmap haute performance
+lazy_static = "1.4.0"   # Initialisation lazy des variables statiques
+
+[profile.release]
+lto = true              # Optimisation au moment de l'édition de liens
+codegen-units = 1       # Optimiser pour la taille du code
+opt-level = 3           # Niveau d'optimisation maximum
+panic = "abort"         # Transformation des panics en abort pour réduire la taille binaire
+strip = true            # Suppression des symboles de débogage 

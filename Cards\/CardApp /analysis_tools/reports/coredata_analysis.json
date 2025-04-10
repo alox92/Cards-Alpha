@@ -1,0 +1,109 @@
+{
+  "stats" : [
+    {
+      "relationshipCount" : 3,
+      "fetchRequestCount" : 4,
+      "estimatedSize" : 1024,
+      "entityName" : "Card",
+      "attributeCount" : 8
+    },
+    {
+      "relationshipCount" : 2,
+      "fetchRequestCount" : 3,
+      "estimatedSize" : 512,
+      "entityName" : "Deck",
+      "attributeCount" : 5
+    },
+    {
+      "relationshipCount" : 2,
+      "fetchRequestCount" : 2,
+      "estimatedSize" : 256,
+      "entityName" : "StudySession",
+      "attributeCount" : 6
+    },
+    {
+      "relationshipCount" : 2,
+      "fetchRequestCount" : 1,
+      "estimatedSize" : 128,
+      "entityName" : "CardReview",
+      "attributeCount" : 5
+    },
+    {
+      "relationshipCount" : 1,
+      "fetchRequestCount" : 1,
+      "estimatedSize" : 64,
+      "entityName" : "Tag",
+      "attributeCount" : 2
+    }
+  ],
+  "optimizationsApplied" : [
+    "Index créé pour Card.lastReviewedAt",
+    "Index créé pour Deck.name",
+    "Relation corrigée: Card.deck",
+    "Relation inverse ajoutée pour CardReview.session"
+  ],
+  "executionTime" : 5.0067901611328125e-05,
+  "modelName" : "Cards",
+  "entities" : [
+    "Card",
+    "Deck",
+    "StudySession",
+    "CardReview",
+    "Tag"
+  ],
+  "issues" : [
+    {
+      "entityName" : "Card",
+      "propertyName" : "lastReviewedAt",
+      "description" : "L'attribut 'lastReviewedAt' est fréquemment utilisé dans les requêtes de tri mais n'est pas indexé.",
+      "automatic" : true,
+      "recommendation" : "Ajouter un index à cet attribut pour accélérer les requêtes de tri.",
+      "issueType" : "Index manquant",
+      "severity" : "Élevé"
+    },
+    {
+      "automatic" : true,
+      "description" : "L'attribut 'name' est utilisé dans des recherches mais n'est pas indexé.",
+      "entityName" : "Deck",
+      "severity" : "Moyen",
+      "issueType" : "Index manquant",
+      "propertyName" : "name",
+      "recommendation" : "Ajouter un index à cet attribut pour accélérer les recherches par nom."
+    },
+    {
+      "propertyName" : "deck",
+      "recommendation" : "Changer la relation pour être non-optionnelle dans le modèle.",
+      "description" : "La relation Card->Deck est déclarée comme optionnelle, mais le code vérifie toujours sa présence.",
+      "automatic" : true,
+      "issueType" : "Relation incohérente",
+      "severity" : "Critique",
+      "entityName" : "Card"
+    },
+    {
+      "recommendation" : "Configurer la relation inverse pour maintenir la cohérence du modèle.",
+      "automatic" : true,
+      "propertyName" : "session",
+      "description" : "La relation inverse 'session.reviews' n'est pas correctement configurée.",
+      "issueType" : "Relation inverse manquante",
+      "entityName" : "CardReview",
+      "severity" : "Élevé"
+    },
+    {
+      "description" : "L'attribut 'totalTime' utilise Double, Integer serait plus efficace pour stocker des durées en secondes.",
+      "recommendation" : "Changer le type de l'attribut et mettre à jour le code qui l'utilise.",
+      "automatic" : false,
+      "propertyName" : "totalTime",
+      "severity" : "Moyen",
+      "issueType" : "Type d'attribut inapproprié",
+      "entityName" : "StudySession"
+    },
+    {
+      "recommendation" : "Déplacer les opérations CoreData vers un contexte d'arrière-plan.",
+      "automatic" : false,
+      "severity" : "Critique",
+      "issueType" : "Problème de concurrence",
+      "entityName" : "Card",
+      "description" : "Des opérations sur l'entité Card sont effectuées sur le thread principal, causant potentiellement des blocages UI."
+    }
+  ]
+}

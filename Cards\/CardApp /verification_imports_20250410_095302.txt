@@ -1,0 +1,29 @@
+RAPPORT DE VÉRIFICATION DES IMPORTS DE CARDAPP
+Date: Thu Apr 10 09:53:02 CEST 2025
+----------------------------------------------
+1. IMPORTS PROBLÉMATIQUES
+Fichiers avec 'import Core.Common':        5
+Fichiers concernés:
+- ./Core/Services/Example/ThreadSafeCoreDataService.swift
+- ./Core/Services/Unified/UnifiedCardService.swift
+- ./Core/Services/Unified/UnifiedStudyService.swift
+- ./Core/Services/Unified/UnifiedDeckService.swift
+- ./Core/Services/Tags/TagService.swift
+
+Fichiers avec 'import Core.Models.Common':        0
+
+Fichiers avec imports malformés:        0
+2. RÉFÉRENCES AUX TYPES AMBIGUS
+Références non qualifiées à ReviewRating:        0
+Références non qualifiées à MasteryLevel:        1
+Références non qualifiées à StudyServiceError:        6
+3. AMBIGUÏTÉS DE PERSISTENCECONTROLLER
+Nombre d'ambiguïtés détectées:        0
+4. DÉCLARATIONS MULTIPLES DE TYPES
+Déclarations de ReviewRating:        0
+Déclarations de MasteryLevel:        1
+5. ERREURS DE COMPILATION LIÉES AUX MODULES
+Erreurs 'No such module':        0
+RÉSUMÉ GLOBAL
+Nombre total de problèmes détectés: 12
+Rapport enregistré dans: verification_imports_20250410_095302.txt

@@ -1,0 +1,26 @@
+// Configuration de base pour toutes les cibles
+
+// Version de l'app
+MARKETING_VERSION = 1.0.0
+CURRENT_PROJECT_VERSION = 1
+
+// Identifiants de bundle
+PRODUCT_BUNDLE_IDENTIFIER = com.example.CardApp
+
+// Niveaux de déploiement par plateforme
+MACOSX_DEPLOYMENT_TARGET = 12.0
+IPHONEOS_DEPLOYMENT_TARGET = 15.0
+
+// Optimisations communes
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+SWIFT_COMPILATION_MODE = wholemodule
+GCC_OPTIMIZATION_LEVEL = s
+
+// Active les warnings modernes
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES
+CLANG_WARN_STRICT_PROTOTYPES = YES
+SWIFT_STRICT_CONCURRENCY = targeted
+
+// Support SwiftUI moderne
+SWIFT_VERSION = 5.9
+ENABLE_PREVIEWS = YES

@@ -1,0 +1,37 @@
+{
+  "name": "cardapp-analysis-visualizer",
+  "version": "1.0.0",
+  "description": "Visualiseur interactif pour les résultats d'analyse du projet CardApp",
+  "main": "src/index.js",
+  "bin": {
+    "cardapp-visualizer": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "dev": "nodemon src/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "swift",
+    "analysis",
+    "visualization",
+    "coredata",
+    "report"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.0",
+    "d3": "^7.6.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
+    "highlight.js": "^11.6.0",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+} 

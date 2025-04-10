@@ -1,0 +1,1055 @@
+Date: Wed Apr  9 18:53:22 CEST 2025
+Projet: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211
+
+[0;34m1. Vérification des délégués sans weak...[0m
+Délégués trouvés: 0, Corrigés: 0
+
+[0;34m2. Vérification des closures sans [weak self]...[0m
+Closures à corriger: 0
+
+[0;34m3. Vérification des NSFetchRequest sans fetchBatchSize...[0m
+Fichier: ./Core/Debug/CoreDataDiagnostics.swift, Ligne: 31
+              let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CardEntity")
+              request.fetchLimit = 100
+              try? context.fetch(request)
+          }
+          
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Debug/CoreDataDiagnostics.swift, Ligne: 37
+              let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CardEntity")
+              request.predicate = NSPredicate(format: "nextReviewDate <= %@", Date() as NSDate)
+              request.fetchLimit = 100
+              try? context.fetch(request)
+          }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 71
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+          return try viewContext.fetch(fetchRequest).first
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 77
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          return try viewContext.fetch(fetchRequest)
+      }
+      
+      func updateDeck(_ deck: DeckEntity) throws {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 117
+          let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+          return try viewContext.fetch(fetchRequest).first
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 123
+          let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+          return try viewContext.fetch(fetchRequest)
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 155
+          let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+          return try viewContext.fetch(fetchRequest).first
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 189
+          let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+          return try viewContext.fetch(fetchRequest).first
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Managers/CoreDataManager.swift, Ligne: 195
+          let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "card.id == %@", cardID as CVarArg)
+          return try viewContext.fetch(fetchRequest)
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Models/Data/CardEntity.swift, Ligne: 30
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<CardEntity> {
+          return NSFetchRequest<CardEntity>(entityName: "CardEntity")
+      }
+  } 
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/CardEntity.swift, Ligne: 31
+          return NSFetchRequest<CardEntity>(entityName: "CardEntity")
+      }
+  } 
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/CardReviewEntity.swift, Ligne: 20
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<CardReviewEntity> {
+          return NSFetchRequest<CardReviewEntity>(entityName: "CardReviewEntity")
+      }
+      
+      // MARK: - Méthodes d'aide pour le rating
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/CardReviewEntity.swift, Ligne: 21
+          return NSFetchRequest<CardReviewEntity>(entityName: "CardReviewEntity")
+      }
+      
+      // MARK: - Méthodes d'aide pour le rating
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/DeckEntity.swift, Ligne: 23
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<DeckEntity> {
+          return NSFetchRequest<DeckEntity>(entityName: "DeckEntity")
+      }
+  } 
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/DeckEntity.swift, Ligne: 24
+          return NSFetchRequest<DeckEntity>(entityName: "DeckEntity")
+      }
+  } 
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/StudySessionEntity.swift, Ligne: 24
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<StudySessionEntity> {
+          return NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+      }
+  }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/StudySessionEntity.swift, Ligne: 25
+          return NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+      }
+  }
+  
+  // MARK: - Conversion vers le modèle StudySession
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/TagEntity.swift, Ligne: 16
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<TagEntity> {
+          return NSFetchRequest<TagEntity>(entityName: "TagEntity")
+      }
+  }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/TagEntity.swift, Ligne: 17
+          return NSFetchRequest<TagEntity>(entityName: "TagEntity")
+      }
+  }
+  
+  // MARK: - Conversion vers le modèle Tag
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/TagItemAssociationEntity.swift, Ligne: 15
+      @nonobjc public class func fetchRequest() -> NSFetchRequest<TagItemAssociationEntity> {
+          return NSFetchRequest<TagItemAssociationEntity>(entityName: "TagItemAssociationEntity")
+      }
+  }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Models/Data/TagItemAssociationEntity.swift, Ligne: 16
+          return NSFetchRequest<TagItemAssociationEntity>(entityName: "TagItemAssociationEntity")
+      }
+  }
+  
+  // MARK: - Conversion pour TagItemAssociation
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Protocols/DataManagementServiceProtocol.swift, Ligne: 34
+      func fetch<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws -> [T]
+      
+      /// Récupère toutes les entités du type spécifié
+      func fetchAll<T: NSManagedObject>(_ type: T.Type) async throws -> [T]
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Protocols/DataManagementServiceProtocol.swift, Ligne: 55
+      func deleteMultiple<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws
+      
+      /// Supprime plusieurs entités à la fois
+      func deleteAll<T: NSManagedObject>(_ entities: [T]) async throws
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Protocols/DataManagementServiceProtocol.swift, Ligne: 61
+      func count<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws -> Int
+  }
+  
+  /// Options pour l'exportation de données
+  public struct DataExportOptions: CustomStringConvertible {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 196
+              let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 225
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  fetchRequest.predicate = localPredicate
+                  fetchRequest.sortDescriptors = localSortDescriptors
+                  
+                  do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 239
+      public func fetch<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws -> [T] {
+          let context = persistenceController.container.newBackgroundContext()
+          
+          return try await withCheckedThrowingContinuation { continuation in
+              context.perform {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 245
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  configure(fetchRequest)
+                  
+                  do {
+                      let results = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 295
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                  fetchRequest.fetchLimit = 1
+                  
+                  do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 356
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                  fetchRequest.fetchLimit = 1
+                  
+                  do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 414
+      public func deleteMultiple<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws {
+          let context = persistenceController.container.newBackgroundContext()
+          
+          try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+              context.perform {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 420
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  configure(fetchRequest)
+                  
+                  do {
+                      let entities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 439
+      public func count<T: NSManagedObject>(_ type: T.Type, configure: @escaping @Sendable (NSFetchRequest<T>) -> Void) async throws -> Int {
+          let context = persistenceController.container.newBackgroundContext()
+          
+          return try await withCheckedThrowingContinuation { continuation in
+              context.perform {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 445
+                  let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+                  configure(fetchRequest)
+                  
+                  do {
+                      let count = try context.count(for: fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Base/DataManagementService.swift, Ligne: 488
+              let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
+              let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+              deleteRequest.resultType = .resultTypeObjectIDs // Pour obtenir les ID supprimés (optionnel)
+              
+              logger.debug("Suppression en batch de l'entité: \(entityName)")
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Example/ThreadSafeCoreDataService.swift, Ligne: 77
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              return try context.fetch(fetchRequest).first
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Example/ThreadSafeCoreDataService.swift, Ligne: 99
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              return try context.fetch(fetchRequest)
+          }
+          
+          // Utilisation de CoreDataConversionUtils pour exécuter l'opération et convertir les résultats
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Example/ThreadSafeCoreDataService.swift, Ligne: 150
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              return try context.fetch(fetchRequest).first
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Example/ThreadSafeCoreDataService.swift, Ligne: 172
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+              return try context.fetch(fetchRequest)
+          }
+          
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Study/StudyService.swift, Ligne: 217
+              let fetchRequest = NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Study/StudyService.swift, Ligne: 326
+                  let fetchRequest = NSFetchRequest<CardReviewEntity>(entityName: "CardReviewEntity")
+                  let cardFetchRequest = NSFetchRequest<CardEntity>(entityName: "CardEntity")
+                  cardFetchRequest.predicate = NSPredicate(format: "id == %@", cardID as CVarArg)
+                  
+                  guard let cardEntity = try context.fetch(cardFetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Study/StudyService.swift, Ligne: 384
+              let fetchRequest = NSFetchRequest<StudySessionEntity>(entityName: "StudySessionEntity")
+              fetchRequest.predicate = NSPredicate(format: "id == %@", session.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 109
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 125
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", card.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 169
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", card.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 194
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id IN %@", ids)
+              
+              let entities = try context.fetch(fetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 218
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              let entities = try context.fetch(fetchRequest)
+              // Utiliser mapCardEntityToModel de manière sûre car la méthode est nonisolated
+              let cards = entities.map { entity in
+                  self.mapCardEntityToModel(entity)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 232
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+              
+              let entities = try context.fetch(fetchRequest)
+              // Utiliser mapCardEntityToModel de manière sûre car la méthode est nonisolated
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 248
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              
+              // Construire un prédicat pour les tags
+              let tagPredicates = tags.map { tag in
+                  NSPredicate(format: "tags CONTAINS %@", tag)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 270
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              
+              // Prédicat pour les cartes dues du deck spécifié
+              fetchRequest.predicate = NSPredicate(
+                  format: "deckID == %@ AND (nextReviewDate <= %@ OR nextReviewDate == nil)",
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedCardService.swift, Ligne: 353
+              let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              
+              // Construire le prédicat de recherche
+              var predicates: [NSPredicate] = []
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 65
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          let entities = try context.fetch(fetchRequest)
+          return entities.map { self.mapDeckEntityToModel($0) }
+      }
+      
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 76
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 109
+              let parentFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              parentFetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              parentFetchRequest.fetchLimit = 1
+              
+              guard let parentDeck = try context.fetch(parentFetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 131
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deck.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let deckEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 218
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let deckEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 248
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "name CONTAINS[cd] %@ OR desc CONTAINS[cd] %@", query, query)
+          
+          return try await context.performAsync {
+              let entities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 264
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "tags CONTAINS %@", tag)
+          
+          return try await context.performAsync {
+              let entities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 282
+              let deckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              deckFetchRequest.predicate = NSPredicate(format: "id IN %@", [sourceDeckID, targetDeckID])
+              
+              let decks = try context.fetch(deckFetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 292
+              let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardFetchRequest.predicate = NSPredicate(format: "id == %@", cardID as CVarArg)
+              guard let cardEntity = try context.fetch(cardFetchRequest).first else {
+                  throw CoreError.entityNotFound
+              }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 361
+              let deckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              deckFetchRequest.predicate = NSPredicate(format: "id IN %@", [sourceDeckID, targetDeckID])
+              
+              let decks = try context.fetch(deckFetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 371
+              let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardFetchRequest.predicate = NSPredicate(format: "id == %@ AND deckID == %@", cardID as CVarArg, sourceDeckID as CVarArg)
+              guard let sourceCardEntity = try context.fetch(cardFetchRequest).first else {
+                  throw CoreError.entityNotFound
+              }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 446
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let deckEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 487
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let deckEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 534
+              let decksFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              decksFetchRequest.predicate = NSPredicate(format: "id IN %@", [sourceDeckID, targetDeckID])
+              
+              let decks = try context.fetch(decksFetchRequest)
+              guard decks.count == 2,
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 545
+              let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardsFetchRequest.predicate = NSPredicate(format: "deckID == %@", sourceDeckID as CVarArg)
+              
+              let cards = try context.fetch(cardsFetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 598
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deck.id as CVarArg)
+              
+              if let existingDeck = try context.fetch(fetchRequest).first {
+                  // Le paquet existe déjà, renvoyer une erreur
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 646
+          let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+          
+          if !tags.isEmpty {
+              let predicates = tags.map { tag in
+                  NSPredicate(format: "ANY tags == %@", tag)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 670
+              let fetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let parentDeck = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 693
+              let deckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              deckFetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              
+              guard let deckEntity = try context.fetch(deckFetchRequest).first else {
+                  throw DeckServiceError.deckNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 701
+              let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardFetchRequest.predicate = NSPredicate(format: "id == %@", cardID as CVarArg)
+              
+              guard let cardEntity = try context.fetch(cardFetchRequest).first else {
+                  throw CoreError.entityNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 718
+                  let oldDeckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+                  oldDeckFetchRequest.predicate = NSPredicate(format: "id == %@", oldDeckID as CVarArg)
+                  
+                  if let oldDeckEntity = try context.fetch(oldDeckFetchRequest).first {
+                      oldDeckEntity.cardCount = max(0, oldDeckEntity.cardCount - 1)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 755
+              let deckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              deckFetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              
+              guard let deckEntity = try context.fetch(deckFetchRequest).first else {
+                  throw DeckServiceError.deckNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 763
+              let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardFetchRequest.predicate = NSPredicate(format: "id == %@ AND deckID == %@", cardID as CVarArg, deckID as CVarArg)
+              
+              guard let cardEntity = try context.fetch(cardFetchRequest).first else {
+                  // Si la carte n'existe pas dans ce paquet, on ne fait rien
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 803
+              let parentFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              parentFetchRequest.predicate = NSPredicate(format: "id == %@", parentID as CVarArg)
+              
+              guard let parentEntity = try context.fetch(parentFetchRequest).first else {
+                  throw DeckServiceError.deckNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 811
+              let subdeckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              subdeckFetchRequest.predicate = NSPredicate(format: "id == %@", subdeck.id as CVarArg)
+              
+              let subdeckEntity: DeckEntity
+              if let existingSubdeck = try context.fetch(subdeckFetchRequest).first {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 843
+              let parentFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              parentFetchRequest.predicate = NSPredicate(format: "id == %@", parentID as CVarArg)
+              
+              guard let parentEntity = try context.fetch(parentFetchRequest).first else {
+                  throw DeckServiceError.deckNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 851
+              let subdeckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              subdeckFetchRequest.predicate = NSPredicate(format: "id == %@ AND parentDeck.id == %@", deckID as CVarArg, parentID as CVarArg)
+              
+              guard let subdeckEntity = try context.fetch(subdeckFetchRequest).first else {
+                  // Si le sous-paquet n'existe pas sous ce parent, on ne fait rien
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 871
+              let deckFetchRequest: NSFetchRequest<DeckEntity> = DeckEntity.fetchRequest()
+              deckFetchRequest.predicate = NSPredicate(format: "id == %@", deckID as CVarArg)
+              
+              guard let deckEntity = try context.fetch(deckFetchRequest).first else {
+                  throw DeckServiceError.deckNotFound
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedDeckService.swift, Ligne: 879
+              let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardsFetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+              
+              let cards = try context.fetch(cardsFetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 105
+          let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "endTime == nil")
+          fetchRequest.fetchLimit = 1
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 125
+              let activeSessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+              activeSessionFetchRequest.predicate = NSPredicate(format: "endTime == nil")
+  if try context.fetch(activeSessionFetchRequest).first != nil {
+  logger.log("Tentative de création d'une session alors qu'une est déjà active")
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 169
+              let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 202
+              let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", session.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let entity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 302
+              let fetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", session.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let sessionEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 377
+          let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+          sessionFetchRequest.predicate = NSPredicate(format: "id == %@", sessionID as CVarArg)
+          sessionFetchRequest.fetchLimit = 1
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 388
+              let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardsFetchRequest.predicate = NSPredicate(format: "id IN %@", cardIDs)
+              
+              let cards = try context.fetch(cardsFetchRequest)
+              return cards.map { Card(from: $0) }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 400
+          let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+          sessionFetchRequest.predicate = NSPredicate(format: "id == %@", sessionID as CVarArg)
+          sessionFetchRequest.fetchLimit = 1
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 411
+              let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardsFetchRequest.predicate = NSPredicate(format: "id IN %@", cardIDs)
+              
+              let cards = try context.fetch(cardsFetchRequest)
+              return cards.map { Card(from: $0) }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 425
+              let cardFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardFetchRequest.predicate = NSPredicate(format: "id == %@", cardID as CVarArg)
+              cardFetchRequest.fetchLimit = 1
+              
+              guard let card = try context.fetch(cardFetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 434
+              let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+              sessionFetchRequest.predicate = NSPredicate(format: "id == %@", sessionID as CVarArg)
+              sessionFetchRequest.fetchLimit = 1
+              
+              guard let session = try context.fetch(sessionFetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 521
+          let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "card.id == %@", cardID as CVarArg)
+          fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+          
+          let reviews: [SendableCardReviewData] = try await withCheckedThrowingContinuation { continuation in
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 568
+          let fetchRequest: NSFetchRequest<CardReviewEntity> = CardReviewEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "card.id == %@", cardID as CVarArg)
+          fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
+          
+          let reviewData: [SendableReviewData] = try await withCheckedThrowingContinuation { continuation in
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 630
+          let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "deckID == %@", deckID as CVarArg)
+          
+          let cardsData: [SendableCardData] = try await withCheckedThrowingContinuation { continuation in
+              context.perform {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 728
+          let sessionFetchRequest: NSFetchRequest<StudySessionEntity> = StudySessionEntity.fetchRequest()
+          sessionFetchRequest.predicate = NSPredicate(format: "id == %@", sessionID as CVarArg)
+          sessionFetchRequest.fetchLimit = 1
+          
+          let sessionData: SendableSessionData = try await withCheckedThrowingContinuation { continuation in
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 777
+              let cardsFetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+              cardsFetchRequest.predicate = NSPredicate(format: "id IN %@", cardIDs)
+              
+              context.perform {
+                  do {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 871
+          let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+          
+          // Gérer les sous-paquets si nécessaire
+          if includeSubdecks {
+              // Cette partie nécessiterait de récupérer récursivement les IDs des sous-paquets
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedStudyService.swift, Ligne: 909
+          let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "deckID == %@ AND (nextReviewDate <= %@ OR nextReviewDate == nil)", 
+                                              deckID as CVarArg, 
+                                              Date() as NSDate)
+          fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CardEntity.nextReviewDate, ascending: true)]
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 87
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \TagEntity.name, ascending: true)]
+          
+          return try await context.performAsync {
+              let tagEntities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 110
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+          fetchRequest.fetchLimit = 1
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 134
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "name ==[c] %@", name)
+          fetchRequest.fetchLimit = 1
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 210
+              let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", tag.id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let tagEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 250
+              let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let tagEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 282
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
+          fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \TagEntity.usage, ascending: false)]
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 305
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \TagEntity.usage, ascending: false)]
+          fetchRequest.fetchLimit = limit
+          
+          return try await context.performAsync {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 436
+              let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", tagID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let tagEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 463
+              let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@", tagID as CVarArg)
+              fetchRequest.fetchLimit = 1
+              
+              guard let tagEntity = try context.fetch(fetchRequest).first else {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 513
+              let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+              fetchRequest.predicate = NSPredicate(format: "id == %@ OR id == %@", sourceID as CVarArg, targetID as CVarArg)
+              
+              let tagEntities = try context.fetch(fetchRequest)
+              
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 559
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "name ==[c] %@", name)
+          let count = try context.count(for: fetchRequest)
+          return count > 0
+      }
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 580
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.predicate = NSPredicate(format: "name IN %@", names)
+          
+          return try await context.performAsync {
+              let tagEntities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Services/Unified/UnifiedTagService.swift, Ligne: 602
+          let fetchRequest: NSFetchRequest<TagEntity> = TagEntity.fetchRequest()
+          fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \TagEntity.usage, ascending: false)]
+          
+          return try await context.performAsync {
+              let tagEntities = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 158
+              let cardFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CardEntity")
+              cardFetchRequest.predicate = NSPredicate(format: "deck == nil")
+              let orphanedCards = try context.fetch(cardFetchRequest) as! [NSManagedObject]
+              
+              if !orphanedCards.isEmpty {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 177
+              let deckFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "DeckEntity")
+              let decks = try context.fetch(deckFetchRequest) as! [NSManagedObject]
+              
+              for deck in decks {
+                  if let cards = deck.value(forKey: "cards") as? Set<NSManagedObject> {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 192
+              let tagAssocFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "TagItemAssociationEntity")
+              let associations = try context.fetch(tagAssocFetchRequest) as! [NSManagedObject]
+              
+              for association in associations {
+                  if association.value(forKey: "tag") == nil || association.value(forKey: "itemID") == nil {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 212
+          let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "DeckEntity")
+          fetchRequest.predicate = NSPredicate(format: "name == %@", "Orphaned Cards")
+          
+          do {
+              let results = try context.fetch(fetchRequest)
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 241
+              let reviewFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CardReviewEntity")
+              reviewFetchRequest.predicate = NSPredicate(format: "card == nil")
+              let orphanedReviews = try context.fetch(reviewFetchRequest) as! [NSManagedObject]
+              
+              for review in orphanedReviews {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+Fichier: ./Core/Tools/CoreDataOptimizer.swift, Ligne: 253
+              let sessionFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "StudySessionEntity")
+              sessionFetchRequest.predicate = NSPredicate(format: "reviews.@count == 0")
+              let emptySessions = try context.fetch(sessionFetchRequest) as! [NSManagedObject]
+              
+              for session in emptySessions {
+  ⚠️ NSFetchRequest sans fetchBatchSize
+
+  ✅ Corrigé
+NSFetchRequest sans fetchBatchSize: 117, Corrigés: 100
+
+[0;34m4. Vérification des context.save() sans try/catch...[0m
+save() sans try: 0
+
+[0;34m5. Vérification des problèmes dans UnifiedStudyService...[0m
+Fichiers UnifiedStudyService trouvés:
+./Core/DI/DependencyContainer.swift
+./Core/Services/Unified/UnifiedStudyService.swift
+
+Analyse de ./Core/DI/DependencyContainer.swift:
+Analyse de ./Core/Services/Unified/UnifiedStudyService.swift:
+[0;32m=== RÉSUMÉ DU DÉBOGAGE RAPIDE ===[0m
+Délégués corrigés: 0 / 0
+Closures à vérifier: 0
+NSFetchRequest corrigés: 100 / 117
+Appels save() à corriger: 0
+
+Le rapport complet est disponible dans: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/fast_debug.log

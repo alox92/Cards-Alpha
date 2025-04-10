@@ -1,0 +1,3028 @@
+{
+  "sommaire": {
+    "fichiers_analyses": 89,
+    "problemes_detectes": 334,
+    "par_severite": {
+      "warning": 47,
+      "critical": 176,
+      "info": 105,
+      "error": 6
+    },
+    "par_type": {
+      "safety": 22,
+      "core_data": 168,
+      "concurrency": 25,
+      "performance": 105,
+      "security": 6,
+      "architecture": 8
+    }
+  },
+  "problemes": [
+    {
+      "fichier": "run_core_data_optimizer.swift",
+      "ligne": 120,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "run_core_data_optimizer.swift",
+      "ligne": 142,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "run_core_data_optimizer.swift",
+      "ligne": 150,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "CoreDataOptimizer.swift",
+      "ligne": 205,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "CoreDataOptimizer.swift",
+      "ligne": 192,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "CoreDataOptimizer.swift",
+      "ligne": 205,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 86,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 160,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 178,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 193,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 216,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 243,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 255,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 160,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 178,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 193,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 216,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 243,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 255,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 159,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 242,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 254,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 160,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 178,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 193,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 243,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Tools/CoreDataOptimizer.swift",
+      "ligne": 255,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 213,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 83,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 96,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 106,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 121,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 134,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 39,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 66,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 73,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 78,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 83,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 88,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 112,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 119,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 125,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 130,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 135,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 150,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 157,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 161,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 166,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 184,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 191,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 197,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 201,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 206,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 32,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 36,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 73,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 78,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 119,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 125,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 157,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 191,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Managers/CoreDataManager.swift",
+      "ligne": 197,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Models/Card+Search.swift",
+      "ligne": 166,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Utilities/Base/Combine+Async.swift",
+      "ligne": 29,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Persistence/CoreDataModel.swift",
+      "ligne": 138,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Persistence/CoreDataModel.swift",
+      "ligne": 126,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Persistence/PersistenceController.swift",
+      "ligne": 56,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Persistence/PersistenceController.swift",
+      "ligne": 47,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Persistence/PersistenceController.swift",
+      "ligne": 49,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Persistence/PersistenceController.swift",
+      "ligne": 54,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/AppDelegate.swift",
+      "ligne": 134,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/AppDelegate.swift",
+      "ligne": 134,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 216,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 79,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 222,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 315,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 330,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 335,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 377,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 391,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 416,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 79,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 222,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 330,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 335,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 391,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Study/StudyService.swift",
+      "ligne": 96,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 81,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 100,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 129,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 154,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 174,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 211,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 81,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 100,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 154,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Example/ThreadSafeCoreDataService.swift",
+      "ligne": 174,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 91,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 115,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 139,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 186,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 214,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 226,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 254,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 262,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 287,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 310,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 440,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 449,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 467,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 478,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 516,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 536,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 584,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 606,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 75,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 91,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 115,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 139,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 214,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 254,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 287,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 310,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 440,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 467,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 516,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 584,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedTagService.swift",
+      "ligne": 606,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 94,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 113,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 129,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 148,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 173,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 178,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 197,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 203,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 219,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 235,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 257,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 290,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 434,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 473,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 39,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 113,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 129,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 173,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 197,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 219,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 235,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 257,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 290,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 434,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedCardService.swift",
+      "ligne": 379,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 110,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 127,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 130,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 146,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 148,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 173,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 206,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 216,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 306,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 311,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 382,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 391,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 405,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 414,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 429,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 438,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 487,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 528,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 575,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 636,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 735,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 782,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 899,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 920,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 95,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 110,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 127,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 130,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 173,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 206,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 306,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 382,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 391,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 405,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 414,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 429,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 438,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 899,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 920,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 106,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 126,
+      "type": "security",
+      "severite": "error",
+      "message": "NSPredicate avec format de chaîne littérale susceptible aux injections",
+      "suggestion": "Utilisez des placeholders %@ avec des arguments pour éviter les injections",
+      "code": "NSPredicate(format: \"name CONTAINS %@\", searchTerm)"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 450,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 459,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 472,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedStudyService.swift",
+      "ligne": 845,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 119,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 151,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 253,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 269,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 466,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 507,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 571,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 622,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 657,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 680,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Utilisation de 'self' dans un bloc asynchrone sans [weak self]",
+      "suggestion": "Utilisez [weak self] pour éviter les cycles de référence et les problèmes de concurrence",
+      "code": "Task {\n    [weak self] in\n    guard let self = self else { return }\n    // votre code ici\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 66,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 80,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 113,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 135,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 148,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 188,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 222,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 228,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 252,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 268,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 285,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 294,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 311,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 364,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 373,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 405,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 450,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 462,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 491,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 503,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 537,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 548,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 568,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 601,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 619,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 656,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 674,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 696,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 704,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 721,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 726,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 758,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 766,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 778,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 806,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 815,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 834,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 846,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 854,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 862,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 874,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 882,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 25,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 66,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 80,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 113,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 135,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 222,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 252,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 268,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 285,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 294,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 364,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 373,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 450,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 491,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 537,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 548,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 601,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 656,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 674,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 696,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 704,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 721,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 758,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 766,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 806,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 815,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 846,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 854,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 874,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 882,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Unified/UnifiedDeckService.swift",
+      "ligne": 893,
+      "type": "safety",
+      "severite": "warning",
+      "message": "Force unwrapping d'optionnel trouvé",
+      "suggestion": "Utilisez 'if let', 'guard let' ou '??' pour un unwrapping sécurisé",
+      "code": "if let value = optionalValue {\n    // utiliser value\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 60,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 68,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 82,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 123,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 237,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 279,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 60,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 68,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 82,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 123,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 237,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 279,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 56,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 64,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 71,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 175,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 56,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 64,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 71,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagItemAssociationService.swift",
+      "ligne": 175,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 82,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 176,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 201,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 230,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 249,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 280,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 300,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 310,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 341,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 361,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 372,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 405,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 424,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try fetch' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.fetch()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 430,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try save' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.save()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 493,
+      "type": "core_data",
+      "severite": "critical",
+      "message": "Opération CoreData 'try execute' sans bloc catch",
+      "suggestion": "Entourez toujours les opérations CoreData avec try/catch pour gérer les erreurs",
+      "code": "do {\n    try context.execute()\n} catch {\n    print(\"Erreur CoreData: \\(error)\")\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 180,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 207,
+      "type": "concurrency",
+      "severite": "warning",
+      "message": "Accès à viewContext sans annotation @MainActor",
+      "suggestion": "Marquez la fonction avec @MainActor pour garantir l'exécution sur le thread principal",
+      "code": "@MainActor\nfunc votreFonction() {\n    // accès à viewContext\n}"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 201,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 230,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 249,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 300,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 361,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Services/Base/DataManagementService.swift",
+      "ligne": 424,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Debug/CoreDataDiagnostics.swift",
+      "ligne": 33,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "Core/Debug/CoreDataDiagnostics.swift",
+      "ligne": 40,
+      "type": "performance",
+      "severite": "info",
+      "message": "Requête fetch sans fetchBatchSize défini",
+      "suggestion": "Définissez fetchBatchSize pour les grandes collections pour améliorer les performances",
+      "code": "let request = NSFetchRequest<Entity>(entityName: \"Entity\")\nrequest.fetchBatchSize = 20"
+    },
+    {
+      "fichier": "run_core_data_optimizer.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre run_core_data_optimizer et CardApp",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol CardAppProtocol {\n    // méthodes requises\n}\n\n// Dans run_core_data_optimizer, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Package.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre Package et PackageDescription",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol PackageDescriptionProtocol {\n    // méthodes requises\n}\n\n// Dans Package, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/DI/DependencyContainer.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre DependencyContainer et os",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol osProtocol {\n    // méthodes requises\n}\n\n// Dans DependencyContainer, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/Models/Card+Search.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre Card+Search et supplémentaire",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol supplémentaireProtocol {\n    // méthodes requises\n}\n\n// Dans Card+Search, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/Common/Extensions.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre Extensions et AppKit",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol AppKitProtocol {\n    // méthodes requises\n}\n\n// Dans Extensions, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/Protocols/NotificationSchedulingServiceProtocol.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre NotificationSchedulingServiceProtocol et UserNotifications",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol UserNotificationsProtocol {\n    // méthodes requises\n}\n\n// Dans NotificationSchedulingServiceProtocol, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/Services/Tags/TagService.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre TagService et du",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol duProtocol {\n    // méthodes requises\n}\n\n// Dans TagService, utiliser le protocole au lieu de la classe concrète"
+    },
+    {
+      "fichier": "Core/Services/Stats/StatisticsView.swift",
+      "ligne": 1,
+      "type": "architecture",
+      "severite": "critical",
+      "message": "Dépendance circulaire détectée entre StatisticsView et Charts",
+      "suggestion": "Utilisez le pattern d'injection de dépendance ou un protocole pour briser la dépendance circulaire",
+      "code": "// Solution: créer un protocole\nprotocol ChartsProtocol {\n    // méthodes requises\n}\n\n// Dans StatisticsView, utiliser le protocole au lieu de la classe concrète"
+    }
+  ]
+}

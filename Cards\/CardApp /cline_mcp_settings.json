@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "github.com/Garoth/sleep-mcp": {
+      "command": "node",
+      "args": ["sleep-mcp/build/index.js"],
+      "disabled": false,
+      "autoApprove": [],
+      "timeout": 300
+    },
+    "github.com/Dhravya/apple-mcp": {
+      "command": "bunx",
+      "args": ["--no-cache", "@dhravya/apple-mcp@latest"],
+      "disabled": false,
+      "autoApprove": [],
+      "timeout": 300
+    }
+  }
+}

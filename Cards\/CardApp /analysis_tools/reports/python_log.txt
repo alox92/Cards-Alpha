@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/python_static_analyzer/core_data_analyzer.py", line 108, in <module>
+    AnalysisRule(
+  File "/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/python_static_analyzer/core_data_analyzer.py", line 31, in __init__
+    self.regex = re.compile(regex_pattern, re.MULTILINE | re.DOTALL)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alox/.pyenv/versions/3.11.9/lib/python3.11/re/__init__.py", line 227, in compile
+    return _compile(pattern, flags)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alox/.pyenv/versions/3.11.9/lib/python3.11/re/__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alox/.pyenv/versions/3.11.9/lib/python3.11/re/_compiler.py", line 749, in compile
+    code = _code(p, flags)
+           ^^^^^^^^^^^^^^^
+  File "/Users/alox/.pyenv/versions/3.11.9/lib/python3.11/re/_compiler.py", line 582, in _code
+    _compile(code, p.data, flags)
+  File "/Users/alox/.pyenv/versions/3.11.9/lib/python3.11/re/_compiler.py", line 155, in _compile
+    raise error("look-behind requires fixed-width pattern")
+re.error: look-behind requires fixed-width pattern

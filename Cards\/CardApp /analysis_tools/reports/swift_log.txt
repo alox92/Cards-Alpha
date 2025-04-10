@@ -1,0 +1,64 @@
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:121:39: error: value of type 'NSManagedObjectModel' has no member 'fetchRequestTemplates'
+119 |         var relationshipCount = 0
+120 |         var indexCount = 0
+121 |         var fetchRequestCount = model.fetchRequestTemplates.count
+    |                                       `- error: value of type 'NSManagedObjectModel' has no member 'fetchRequestTemplates'
+122 |         var compositeIndexCount = 0
+123 |         var derivedAttributeCount = 0
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:131:37: error: value of type 'NSEntityDescription' has no member 'indices'
+129 |             
+130 |             // Compter les index
+131 |             if let indices = entity.indices {
+    |                                     `- error: value of type 'NSEntityDescription' has no member 'indices'
+132 |                 indexCount += indices.count
+133 |                 compositeIndexCount += indices.filter { $0.elements.count > 1 }.count
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:168:49: error: value of type 'NSEntityDescription' has no member 'indices'
+166 |         for entity in model.entities {
+167 |             // 1. Vérifier les attributs qui devraient probablement être indexés
+168 |             let indexedAttributes = Set((entity.indices ?? []).flatMap { $0.elements.map { $0.name } })
+    |                                                 `- error: value of type 'NSEntityDescription' has no member 'indices'
+169 |             
+170 |             for property in entity.properties {
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:168:77: error: value of type 'Any' has no member 'elements'
+166 |         for entity in model.entities {
+167 |             // 1. Vérifier les attributs qui devraient probablement être indexés
+168 |             let indexedAttributes = Set((entity.indices ?? []).flatMap { $0.elements.map { $0.name } })
+    |                                                                             |- error: value of type 'Any' has no member 'elements'
+    |                                                                             `- note: cast 'Any' to 'AnyObject' or use 'as!' to force downcast to a more specific type to access members
+169 |             
+170 |             for property in entity.properties {
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:332:45: error: value of type 'NSEntityDescription' has no member 'indices'
+330 |         // Suggérer des index composites pour les entités avec plusieurs attributs indexés
+331 |         for entity in model.entities {
+332 |             let indexedAttributes = (entity.indices ?? []).flatMap { $0.elements.map { $0.name } }
+    |                                             `- error: value of type 'NSEntityDescription' has no member 'indices'
+333 |             let attributeSet = Set(indexedAttributes)
+334 |             
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:332:56: error: cannot convert value of type '[Any]' to expected argument type 'T?'
+330 |         // Suggérer des index composites pour les entités avec plusieurs attributs indexés
+331 |         for entity in model.entities {
+332 |             let indexedAttributes = (entity.indices ?? []).flatMap { $0.elements.map { $0.name } }
+    |                                                        `- error: cannot convert value of type '[Any]' to expected argument type 'T?'
+333 |             let attributeSet = Set(indexedAttributes)
+334 |             
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:332:68: error: cannot infer type of closure parameter '$0' without a type annotation
+330 |         // Suggérer des index composites pour les entités avec plusieurs attributs indexés
+331 |         for entity in model.entities {
+332 |             let indexedAttributes = (entity.indices ?? []).flatMap { $0.elements.map { $0.name } }
+    |                                                                    `- error: cannot infer type of closure parameter '$0' without a type annotation
+333 |             let attributeSet = Set(indexedAttributes)
+334 |             
+
+/Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/swift_coredata_optimizer/CoreDataDiagnostic.swift:335:49: error: value of type 'NSEntityDescription' has no member 'indices'
+333 |             let attributeSet = Set(indexedAttributes)
+334 |             
+335 |             if attributeSet.count > 1 && entity.indices?.filter({ $0.elements.count > 1 }).isEmpty ?? true {
+    |                                                 `- error: value of type 'NSEntityDescription' has no member 'indices'
+336 |                 // Si plusieurs attributs sont indexés individuellement mais pas ensemble
+337 |                 issues.append(CoreDataIssue(

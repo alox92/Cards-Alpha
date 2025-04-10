@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  
+  <style>
+    :root {
+      --primary-color: <%= theme === 'dark' ? '#4285F4' : '#1a73e8' %>;
+      --secondary-color: <%= theme === 'dark' ? '#34A853' : '#34A853' %>;
+      --bg-color: <%= theme === 'dark' ? '#121212' : '#ffffff' %>;
+      --bg-secondary: <%= theme === 'dark' ? '#202124' : '#f1f3f4' %>;
+      --text-color: <%= theme === 'dark' ? '#e0e0e0' : '#202124' %>;
+      --text-secondary: <%= theme === 'dark' ? '#9aa0a6' : '#5f6368' %>;
+      --border-color: <%= theme === 'dark' ? '#5f6368' : '#dadce0' %>;
+      --danger-color: <%= theme === 'dark' ? '#ea4335' : '#ea4335' %>;
+      --warning-color: <%= theme === 'dark' ? '#fbbc04' : '#fbbc04' %>;
+      --success-color: <%= theme === 'dark' ? '#34A853' : '#34A853' %>;
+      --info-color: <%= theme === 'dark' ? '#4285F4' : '#4285F4' %>;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+    
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .card {
+      background-color: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    .issues-container {
+      margin: 20px 0;
+    }
+    
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 5px 15px;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .filter-btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .filter-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .issue-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    .issue-table th, .issue-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .issue-table th {
+      font-weight: bold;
+      background-color: var(--bg-secondary);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .issue-table tbody tr:hover {
+      background-color: var(--bg-secondary);
+    }
+    
+    .severity-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .severity-CRITICAL {
+      background-color: var(--danger-color);
+      color: white;
+    }
+    
+    .severity-HIGH {
+      background-color: #ff5722;
+      color: white;
+    }
+    
+    .severity-MEDIUM {
+      background-color: var(--warning-color);
+      color: black;
+    }
+    
+    .severity-LOW {
+      background-color: var(--info-color);
+      color: white;
+    }
+    
+    .issue-detail {
+      background-color: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .issue-detail.active {
+      display: block;
+    }
+    
+    .code-snippet {
+      background-color: <%= theme === 'dark' ? '#1e1e1e' : '#f5f5f5' %>;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+    
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      background-color: var(--bg-secondary);
+      border-radius: 5px 5px 0 0;
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+      cursor: pointer;
+    }
+    
+    .tab.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: var(--bg-secondary);
+      border-radius: 0 0 5px 5px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .chart-container {
+      height: 300px;
+      margin: 20px 0;
+    }
+    
+    .hotspot-file {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: var(--bg-secondary);
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    .hotspot-file-name {
+      font-weight: bold;
+    }
+    
+    .hotspot-file-stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      
+      .issue-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+  
+  <!-- Ajout d'une feuille de style pour la syntaxe highlight -->
+  <style>
+    /* Style pour highlight.js - adapté pour thème clair/sombre */
+    <%= theme === 'dark' ? '.hljs{display:block;overflow-x:auto;padding:.5em;color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#c678dd}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title{color:#e6c07b}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}'
+    : '.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#a0a1a7;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#a626a4}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e45649}.hljs-literal{color:#0184bb}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#50a14f}.hljs-built_in,.hljs-class .hljs-title{color:#c18401}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#986801}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#4078f2}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}' %>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><%= title %></h1>
+      <p>Généré le <%= new Date(timestamp).toLocaleString('fr-FR') %></p>
+      <button class="toggle-theme" id="themeToggle"><%= theme === 'dark' ? '☀️' : '🌙' %></button>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="dashboard">
+      <div class="card stat-card">
+        <div class="stat-value" style="color: var(--danger-color);">
+          <%= statistics.issuesBySeverity?.CRITICAL || 0 %>
+        </div>
+        <div class="stat-label">Problèmes critiques</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div class="stat-value" style="color: #ff5722;">
+          <%= statistics.issuesBySeverity?.HIGH || 0 %>
+        </div>
+        <div class="stat-label">Problèmes élevés</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div class="stat-value" style="color: var(--warning-color);">
+          <%= statistics.issuesBySeverity?.MEDIUM || 0 %>
+        </div>
+        <div class="stat-label">Problèmes moyens</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div class="stat-value" style="color: var(--info-color);">
+          <%= statistics.issuesBySeverity?.LOW || 0 %>
+        </div>
+        <div class="stat-label">Problèmes bas</div>
+      </div>
+    </div>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="issues">Problèmes</div>
+      <div class="tab" data-tab="hotspots">Points chauds</div>
+      <div class="tab" data-tab="stats">Statistiques</div>
+    </div>
+    
+    <div class="tab-content active" id="issues-tab">
+      <h2>Tous les problèmes (<%= issues.length %>)</h2>
+      
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="CRITICAL">Critiques</button>
+        <button class="filter-btn" data-filter="HIGH">Élevés</button>
+        <button class="filter-btn" data-filter="MEDIUM">Moyens</button>
+        <button class="filter-btn" data-filter="LOW">Bas</button>
+        
+        <% if (statistics.issuesBySource) { %>
+          <% if (statistics.issuesBySource.python > 0) { %>
+            <button class="filter-btn" data-filter-source="python">Python (<%= statistics.issuesBySource.python %>)</button>
+          <% } %>
+          <% if (statistics.issuesBySource.swift > 0) { %>
+            <button class="filter-btn" data-filter-source="swift">Swift (<%= statistics.issuesBySource.swift %>)</button>
+          <% } %>
+          <% if (statistics.issuesBySource.rust > 0) { %>
+            <button class="filter-btn" data-filter-source="rust">Rust (<%= statistics.issuesBySource.rust %>)</button>
+          <% } %>
+        <% } %>
+      </div>
+      
+      <div class="issues-container">
+        <table class="issue-table">
+          <thead>
+            <tr>
+              <th>Sévérité</th>
+              <th>Fichier</th>
+              <th>Ligne</th>
+              <th>Type</th>
+              <th>Message</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% issues.forEach(issue => { %>
+              <tr class="issue-row" data-id="<%= issue.id %>" data-severity="<%= issue.severity %>" data-source="<%= issue.source %>">
+                <td><span class="severity-badge severity-<%= issue.severity %>"><%= issue.severity %></span></td>
+                <td><%= issue.file ? issue.file.split('/').pop() : (issue.entity || 'N/A') %></td>
+                <td><%= issue.line || 'N/A' %></td>
+                <td><%= issue.type %></td>
+                <td><%= issue.message %></td>
+                <td><%= issue.source %></td>
+              </tr>
+              <tr>
+                <td colspan="6" class="issue-detail" id="detail-<%= issue.id %>">
+                  <% if (issue.snippet) { %>
+                    <h4>Extrait de code</h4>
+                    <pre class="code-snippet"><code><%= highlightCode(issue.snippet, 'swift') %></code></pre>
+                  <% } %>
+                  
+                  <% if (issue.suggestion) { %>
+                    <h4>Suggestion</h4>
+                    <p><%= issue.suggestion %></p>
+                  <% } %>
+                  
+                  <% if (issue.impact) { %>
+                    <h4>Impact</h4>
+                    <p><%= issue.impact %></p>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="hotspots-tab">
+      <h2>Points chauds du code</h2>
+      
+      <div class="hotspots-container">
+        <% if (hotspotFiles && hotspotFiles.length > 0) { %>
+          <% hotspotFiles.forEach(file => { %>
+            <div class="hotspot-file">
+              <div class="hotspot-file-name"><%= file.name %></div>
+              <div class="hotspot-file-path"><%= file.path %></div>
+              <div class="hotspot-file-stats">
+                <span>Score: <%= file.score %></span>
+                <span>Issues: <%= file.issueCount %></span>
+                <% if (file.criticalCount > 0) { %>
+                  <span style="color: var(--danger-color);">Critiques: <%= file.criticalCount %></span>
+                <% } %>
+                <% if (file.highCount > 0) { %>
+                  <span style="color: #ff5722;">Élevés: <%= file.highCount %></span>
+                <% } %>
+              </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>Aucun point chaud détecté dans le code.</p>
+        <% } %>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="stats-tab">
+      <h2>Statistiques détaillées</h2>
+      
+      <div class="card">
+        <h3>Distribution par type</h3>
+        <div class="chart-container" id="issuesByTypeChart">
+          <canvas id="issuesByTypeCanvas"></canvas>
+        </div>
+      </div>
+      
+      <% if (statistics.python) { %>
+        <div class="card">
+          <h3>Résultats de l'analyse Python</h3>
+          <p>Fichiers analysés: <%= statistics.python.files_analyzed %></p>
+          <h4>Problèmes par type:</h4>
+          <ul>
+            <% Object.entries(statistics.python.issues_by_type).forEach(([type, count]) => { %>
+              <% if (count > 0) { %>
+                <li><%= type %>: <%= count %></li>
+              <% } %>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+      
+      <% if (statistics.swift) { %>
+        <div class="card">
+          <h3>Résultats de l'analyse CoreData</h3>
+          <p>Entités: <%= statistics.swift.entity_count %></p>
+          <p>Attributs: <%= statistics.swift.attribute_count %></p>
+          <p>Relations: <%= statistics.swift.relationship_count %></p>
+          <p>Index: <%= statistics.swift.index_count %></p>
+        </div>
+      <% } %>
+      
+      <% if (statistics.rust) { %>
+        <div class="card">
+          <h3>Résultats de l'analyse de performance</h3>
+          <p>Complexité moyenne: <%= statistics.rust.average_complexity?.toFixed(2) || 'N/A' %></p>
+          <p>Maximum de profondeur d'imbrication: <%= statistics.rust.max_nesting_depth || 'N/A' %></p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  
+  <script>
+    // Fonction pour basculer les détails d'un problème
+    document.querySelectorAll('.issue-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const id = row.getAttribute('data-id');
+        const detailElement = document.getElementById(`detail-${id}`);
+        
+        if (detailElement.classList.contains('active')) {
+          detailElement.classList.remove('active');
+        } else {
+          // Fermer tous les autres détails
+          document.querySelectorAll('.issue-detail.active').forEach(el => {
+            el.classList.remove('active');
+          });
+          
+          // Ouvrir ce détail
+          detailElement.classList.add('active');
+        }
+      });
+    });
+    
+    // Filtres pour les problèmes
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Gérer l'état actif des boutons de filtre
+        if (btn.getAttribute('data-filter')) {
+          document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        } else if (btn.getAttribute('data-filter-source')) {
+          document.querySelectorAll('[data-filter-source]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+        
+        // Filtrer les lignes
+        const filter = btn.getAttribute('data-filter');
+        const sourceFilter = btn.getAttribute('data-filter-source');
+        
+        document.querySelectorAll('.issue-row').forEach(row => {
+          if (filter && filter !== 'all') {
+            if (row.getAttribute('data-severity') === filter) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          } else if (sourceFilter) {
+            if (row.getAttribute('data-source') === sourceFilter) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          } else {
+            row.style.display = '';
+          }
+        });
+      });
+    });
+    
+    // Gestion des onglets
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Gérer l'état actif des onglets
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Afficher le contenu de l'onglet correspondant
+        const tabId = tab.getAttribute('data-tab');
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
+    
+    // Bouton pour basculer le thème
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const isDarkTheme = document.body.classList.contains('dark-theme');
+      if (isDarkTheme) {
+        document.body.classList.remove('dark-theme');
+        document.getElementById('themeToggle').textContent = '🌙';
+      } else {
+        document.body.classList.add('dark-theme');
+        document.getElementById('themeToggle').textContent = '☀️';
+      }
+    });
+    
+    // Si le thème initial est sombre, ajouter la classe au body
+    <% if (theme === 'dark') { %>
+      document.body.classList.add('dark-theme');
+    <% } %>
+  </script>
+</body>
+</html> 

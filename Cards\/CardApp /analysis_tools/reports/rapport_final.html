@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport d'analyse - CardApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 30px; }
+        h3 { color: #3498db; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .report-section { margin-bottom: 30px; }
+        .info { color: #17a2b8; }
+        .warning { color: #ffc107; }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        pre { background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rapport d'analyse - CardApp</h1>
+        
+        <div class="summary">
+            <h2>Résumé</h2>
+            <p>Analyse effectuée le Wed Apr  9 21:34:23 CEST 2025</p>
+            <p>Temps d'exécution total: 1s</p>
+        </div>
+
+        <div class="report-section">
+            <h2>Analyses effectuées</h2>
+            <ul>
+<li class="warning">Analyse statique (Python) - Non exécutée</li>
+<li class="success">Diagnostic CoreData (Swift) - Complété</li>
+<li class="warning">Analyse de performance (Rust) - Non exécutée</li>
+            </ul>
+        </div>
+
+        <div class="report-section">
+            <h2>Résultats</h2>
+            <p class="info">Pour des résultats détaillés, veuillez consulter les fichiers JSON dans le répertoire des rapports.</p>
+            <p><strong>Répertoire des rapports:</strong> /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/reports</p>
+            
+            <h3>Problèmes CoreData détectés</h3>
+<pre>
+🔍 Analyse du modèle CoreData: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/Core/Models/Data/Core.xcdatamodeld
+📊 Analyse de la structure du modèle...
+🔎 Recherche d'index manquants...
+🔄 Vérification de la cohérence des relations...
+💡 Génération de suggestions d'optimisation...
+🔧 Application des corrections automatiques...
+
+📋 RAPPORT D'ANALYSE COREDATA
+============================
+Modèle: Cards
+Entités: Card, Deck, StudySession, CardReview, Tag
+Problèmes détectés: 6
+Optimisations appliquées: 4
+Temps d'exécution: 0.00 secondes
+
+Détail des problèmes:
+
+[1] Index manquant (Élevé)
+   Entité: Card.lastReviewedAt
+   Description: L'attribut 'lastReviewedAt' est fréquemment utilisé dans les requêtes de tri mais n'est pas indexé.
+   Recommandation: Ajouter un index à cet attribut pour accélérer les requêtes de tri.
+   Correction automatique: Oui
+
+[2] Index manquant (Moyen)
+   Entité: Deck.name
+   Description: L'attribut 'name' est utilisé dans des recherches mais n'est pas indexé.
+   Recommandation: Ajouter un index à cet attribut pour accélérer les recherches par nom.
+   Correction automatique: Oui
+
+[3] Relation incohérente (Critique)
+   Entité: Card.deck
+   Description: La relation Card->Deck est déclarée comme optionnelle, mais le code vérifie toujours sa présence.
+   Recommandation: Changer la relation pour être non-optionnelle dans le modèle.
+   Correction automatique: Oui
+
+[4] Relation inverse manquante (Élevé)
+   Entité: CardReview.session
+   Description: La relation inverse 'session.reviews' n'est pas correctement configurée.
+   Recommandation: Configurer la relation inverse pour maintenir la cohérence du modèle.
+   Correction automatique: Oui
+
+[5] Type d'attribut inapproprié (Moyen)
+   Entité: StudySession.totalTime
+   Description: L'attribut 'totalTime' utilise Double, Integer serait plus efficace pour stocker des durées en secondes.
+   Recommandation: Changer le type de l'attribut et mettre à jour le code qui l'utilise.
+   Correction automatique: Non
+
+[6] Problème de concurrence (Critique)
+   Entité: Card
+   Description: Des opérations sur l'entité Card sont effectuées sur le thread principal, causant potentiellement des blocages UI.
+   Recommandation: Déplacer les opérations CoreData vers un contexte d'arrière-plan.
+   Correction automatique: Non
+
+✅ Rapport sauvegardé dans: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/reports/coredata_analysis.json
+</pre>
+        </div>
+    </div>
+</body>
+</html>

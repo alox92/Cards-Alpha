@@ -1,0 +1,54 @@
+🔍 Analyse du modèle CoreData: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/Core/Models/Data/Core.xcdatamodeld
+📊 Analyse de la structure du modèle...
+🔎 Recherche d'index manquants...
+🔄 Vérification de la cohérence des relations...
+💡 Génération de suggestions d'optimisation...
+🔧 Application des corrections automatiques...
+
+📋 RAPPORT D'ANALYSE COREDATA
+============================
+Modèle: Cards
+Entités: Card, Deck, StudySession, CardReview, Tag
+Problèmes détectés: 6
+Optimisations appliquées: 4
+Temps d'exécution: 0.00 secondes
+
+Détail des problèmes:
+
+[1] Index manquant (Élevé)
+   Entité: Card.lastReviewedAt
+   Description: L'attribut 'lastReviewedAt' est fréquemment utilisé dans les requêtes de tri mais n'est pas indexé.
+   Recommandation: Ajouter un index à cet attribut pour accélérer les requêtes de tri.
+   Correction automatique: Oui
+
+[2] Index manquant (Moyen)
+   Entité: Deck.name
+   Description: L'attribut 'name' est utilisé dans des recherches mais n'est pas indexé.
+   Recommandation: Ajouter un index à cet attribut pour accélérer les recherches par nom.
+   Correction automatique: Oui
+
+[3] Relation incohérente (Critique)
+   Entité: Card.deck
+   Description: La relation Card->Deck est déclarée comme optionnelle, mais le code vérifie toujours sa présence.
+   Recommandation: Changer la relation pour être non-optionnelle dans le modèle.
+   Correction automatique: Oui
+
+[4] Relation inverse manquante (Élevé)
+   Entité: CardReview.session
+   Description: La relation inverse 'session.reviews' n'est pas correctement configurée.
+   Recommandation: Configurer la relation inverse pour maintenir la cohérence du modèle.
+   Correction automatique: Oui
+
+[5] Type d'attribut inapproprié (Moyen)
+   Entité: StudySession.totalTime
+   Description: L'attribut 'totalTime' utilise Double, Integer serait plus efficace pour stocker des durées en secondes.
+   Recommandation: Changer le type de l'attribut et mettre à jour le code qui l'utilise.
+   Correction automatique: Non
+
+[6] Problème de concurrence (Critique)
+   Entité: Card
+   Description: Des opérations sur l'entité Card sont effectuées sur le thread principal, causant potentiellement des blocages UI.
+   Recommandation: Déplacer les opérations CoreData vers un contexte d'arrière-plan.
+   Correction automatique: Non
+
+✅ Rapport sauvegardé dans: /Users/alox/Downloads/CardsNew/Cards_Fixed/CardApp 22-38-19-211/analysis_tools/reports/coredata_analysis.json

@@ -1,0 +1,211 @@
+import SwiftUI
+import Charts // Assurez-vous d'importer Charts si vous l'utilisez
+
+// --- Placeholders pour les dépendances et modèles ---
+
+// Placeholder pour CardViewModel, DeckViewModel, StudyViewModel
+// Assurez-vous qu'ils existent, sont conformes à ObservableObject,
+// et sont correctement injectés via @EnvironmentObject.
+
+// class CardViewModel: ObservableObject { /* ... */ }
+// class DeckViewModel: ObservableObject {
+//     @Published var decks: [Deck] = [
+//         Deck(id: UUID(), name: "Deck 1", cardCount: 20),
+//         Deck(id: UUID(), name: "Deck 2", cardCount: 15)
+//     ]
+//     func loadDecks() { /* ... */ }
+// }
+// class StudyViewModel: ObservableObject {
+//    // Contient potentiellement les données brutes de session
+//    // var sessionHistory: [StudySessionRecord] = []
+// }
+
+// Placeholder pour les modèles de données
+// struct Deck: Identifiable, Hashable { let id: UUID; var name: String; var cardCount: Int }
+// struct Card: Identifiable { let id: UUID; var masteryLevel: MasteryLevel? }
+// enum MasteryLevel: String, CaseIterable, Identifiable { /* ... */ var id: String { rawValue } }
+// struct StudySessionRecord { /* ... */ var deckId: UUID; var duration: TimeInterval; var cardsStudied: Int; var successRate: Double; var date: Date }
+// struct DailyStat { let date: Date; let value: Double }
+
+// Placeholder pour les Enums utilisés
+/*
+enum StatsPeriod: String, CaseIterable, Identifiable {
+    case week = "Semaine"
+    case month = "Mois"
+    case year = "Année"
+    case allTime = "Toujours"
+    
+    var id: String { rawValue }
+    var title: String { rawValue }
+}
+
+enum StatType: String, CaseIterable, Identifiable {
+    case cards = "Cartes"
+    case sessions = "Sessions"
+    case time = "Temps"
+    
+    var id: String { rawValue }
+    var title: String { rawValue }
+}
+
+// Placeholder pour les données de graphique
+struct ChartDataPoint: Identifiable {
+    let id = UUID()
+    let date: Date
+    let value: Double
+}
+*/
+
+/// Vue principale pour afficher les statistiques de l'application.
+struct StatisticsView: View {
+    @EnvironmentObject var container: DependencyContainer
+    @StateObject private var viewModel: StatisticsViewModel
+    
+    init() {
+        // Utilisation d'une initialisation par défaut pour que SwiftUI puisse créer le StateObject
+        // Les vrais services seront injectés dans le onAppear via le container
+        _viewModel = StateObject(wrappedValue: StatisticsViewModel(
+            statisticsService: DependencyContainer.preview.statisticsService,
+            deckService: DependencyContainer.preview.deckService
+        ))
+    }
+    
+    // Injecter le service de statistiques (via ViewModel ou EnvironmentObject)
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 16) {
+                    Text("Statistiques")
+                        .font(.largeTitle)
+                        .padding(.bottom)
+
+                    // Section Placeholder
+                    placeholderSection
+                    
+                    // Sections réelles (à décommenter quand les données sont chargées)
+                    /*
+                    if isLoading {
+                        ProgressView("Chargement des statistiques...")
+                    } else if let errorMessage = errorMessage {
+                        Text("Erreur: \(errorMessage)")
+                            .foregroundColor(.red)
+                    } else {
+                        overallStatsSection
+                        deckStatsSection
+                        activitySection
+                    }
+                     */
+                }
+                .padding()
+            }
+            .navigationTitle("Statistiques d'apprentissage")
+            .onAppear {
+                // Chargement initial des statistiques
+                viewModel.loadStatistics()
+            }
+        }
+    }
+    
+    // MARK: - Placeholder View
+    
+    private var placeholderSection: some View {
+        VStack(alignment: .center) {
+            Image(systemName: "chart.bar.xaxis")
+                .font(.system(size: 50))
+                .foregroundColor(.secondary)
+                .padding(.bottom)
+            Text("Les statistiques détaillées seront bientôt disponibles ici.")
+                .font(.title2)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+        }
+        .frame(maxWidth: .infinity, minHeight: 300)
+    }
+    
+    // MARK: - Sections (Futures implémentations)
+    /*
+    @ViewBuilder
+    private var overallStatsSection: some View {
+        if let stats = overallStats {
+            Section("Statistiques Globales") {
+                // Afficher les stats globales (total cartes, par niveau, etc.)
+                Text("Total Cartes: \(stats.totalCards)")
+                // ... autres stats ...
+            }
+        } else {
+            EmptyView()
+        }
+    }
+    
+    @ViewBuilder
+    private var deckStatsSection: some View {
+        Section("Statistiques par Paquet") {
+            ForEach(deckStats) { stats in
+                // Afficher les stats pour chaque paquet
+                Text("Paquet: \(stats.deckName)")
+                Text("  Cartes: \(stats.cardCount)")
+                // ...
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var activitySection: some View {
+        if let activity = activity {
+             Section("Activité de Révision") {
+                 // Afficher le graphique d'activité
+                 Text("Révisions par jour: ...") // Graphique ici
+             }
+        } else {
+             EmptyView()
+        }
+    }
+    */
+
+    // MARK: - Data Loading (Future implementation)
+    /*
+    private func loadStatistics() {
+        isLoading = true
+        errorMessage = nil
+        Task {
+            do {
+                 // Remplacer par l'appel réel au service injecté
+                 // let service = MockStatisticsService() // Utiliser le vrai service
+                 // self.overallStats = try await service.getOverallStats()
+                 // self.deckStats = try await service.getStatsPerDeck()
+                 // self.activity = try await service.getReviewActivity(period: .lastMonth)
+                 print("WARN: Chargement de statistiques factices (Placeholder)")
+                 // Simuler un délai
+                 try await Task.sleep(nanoseconds: 1_000_000_000)
+                
+                 // Mettre des données factices si nécessaire pour le layout
+                
+            } catch {
+                print("Erreur lors du chargement des statistiques: \(error)")
+                self.errorMessage = error.localizedDescription
+            }
+            isLoading = false
+        }
+    }
+     */
+}
+
+// MARK: - Preview
+
+struct StatisticsView_Previews: PreviewProvider {
+    static var previews: some View {
+        StatisticsView()
+            // Injecter un service mock si nécessaire pour la preview
+            // .environmentObject(MockStatisticsService())
+            .frame(width: 600, height: 400)
+    }
+}
+
+// MARK: - Model Mocks (Suppression des définitions redondantes)
+// struct Deck: Identifiable, Hashable { ... } -> Supprimé
+// enum MasteryLevel: String, CaseIterable, Codable { ... } -> Supprimé
+// class StatisticsViewModel: ObservableObject { ... } -> Supprimé
+
+// MARK: - Previews
+// ... existing code ... 
